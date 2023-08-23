@@ -1,5 +1,6 @@
 import "./App.css";
 import { Bg } from "./assets/bg";
+import { Window1 } from "./assets/window1";
 import win from "./winlogo.png";
 import React, { useState } from "react";
 
@@ -13,13 +14,18 @@ function App() {
     }
   };
   const bgclick = () => {
-    setIsActive(false);
+    if (isActive) {
+      setIsActive(false);
+    }
   };
   return (
-    <div class="flex bg-[#018281] min-h-screen">
+    <div class=" bg-[#018281] min-h-screen">
       <Bg />
-
-      <div class="bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px]">
+      <Window1 />
+      <div
+        onClick={bgclick}
+        class="bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px]"
+      >
         <div>
           <div
             onClick={handleClick}
