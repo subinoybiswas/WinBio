@@ -19,7 +19,10 @@ function App() {
     }
   };
   return (
-    <div class=" bg-[#018281] min-h-screen">
+    <div
+      className="BG"
+      class=" bg-[#018281] min-h-screen max-h-[95vh] max-w-[100vw] overflow-hidden"
+    >
       <Bg />
       <Window1 />
       <div
