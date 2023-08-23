@@ -12,17 +12,22 @@ function App() {
       setIsActive(true);
     }
   };
+  const bgclick = () => {
+    setIsActive(false);
+  };
   return (
     <div class="flex bg-[#018281] min-h-screen">
       <Bg />
+
       <div class="bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px]">
-        <div onClick={handleClick}>
+        <div>
           <div
+            onClick={handleClick}
             class={
               "border-t-2 border-s-2 bg-[#C0C0C0] my-[5px] mx-1.5 left-0 grid grid-flow-col content-center" +
               (isActive
-                ? " h-[28px] w-[70px] border-white shadow-[2.0px_2.0px_2.0px_rgba(0,0,0,1)]  "
-                : " h-[28px] w-[70px] border-black  ")
+                ? "  h-[28px] w-[70px] border-black  "
+                : " h-[28px] w-[70px] border-white shadow-[2.0px_2.0px_2.0px_rgba(0,0,0,1)] ")
             }
           >
             <img
