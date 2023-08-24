@@ -20,15 +20,13 @@ function App() {
   };
   return (
     <div
+      onClick={bgclick}
       className="BG"
       class=" bg-[#018281] min-h-screen max-h-[95vh] max-w-[100vw] overflow-hidden"
     >
       <Bg />
       <Window1 />
-      <div
-        onClick={bgclick}
-        class="bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px]"
-      >
+      <div class="bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px]">
         <div>
           <div
             onClick={handleClick}

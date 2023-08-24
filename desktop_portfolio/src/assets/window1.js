@@ -13,16 +13,16 @@ export class Window1 extends Component {
         isFullScreen: !prevState.isFullScreen,
       }),
       () => {
-        if (this.state.isFullScreen) {
-          // Entering full screen
-          const x = this.rnd.state.top;
-          const y = this.rnd.state.left;
-          const { width, height } = this.rnd.state.bounds;
+        const { x, y } = this.rnd.draggable.state;
+        const { width, height } = this.rnd.resizable.state;
 
+        console.log(x, y);
+        if (this.state.isFullScreen) {
           this.setState({
             originalPosition: { x, y },
             originalSize: { width, height },
           });
+          // Entering full screen
 
           this.rnd.updatePosition({ x: 0, y: 0 }); // Move to top-left corner
           this.rnd.updateSize({
@@ -32,8 +32,15 @@ export class Window1 extends Component {
         } else {
           // Exiting full screen
           console.log(this.rnd);
-          this.rnd.updatePosition({ x: 150, y: 205 });
-          this.rnd.updateSize({ width: 300, height: 190 });
+
+          this.rnd.updatePosition({
+            x: this.state.originalPosition.x,
+            y: this.state.originalPosition.y,
+          });
+          this.rnd.updateSize({
+            width: this.state.originalSize.width,
+            height: this.state.originalSize.height,
+          });
         }
       }
     );
