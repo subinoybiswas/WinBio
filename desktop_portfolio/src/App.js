@@ -3,6 +3,7 @@ import { Bg } from "./assets/bg";
 import { Window1 } from "./assets/window1";
 import win from "./winlogo.png";
 import React, { useState } from "react";
+import bgimg from "./winbg.png";
 
 function App() {
   const [isActive, setIsActive] = useState(false);
@@ -22,6 +23,11 @@ function App() {
   return (
     <div
       onClick={bgclick}
+      style={{
+        backgroundImage: `url(${bgimg})`,
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+      }}
       class={
         " bg-[#018281] min-h-[100vh] max-h-screen  min-w-[100vw] max-w-[100vw]" +
         {}
