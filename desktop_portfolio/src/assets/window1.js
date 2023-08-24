@@ -26,8 +26,8 @@ export class Window1 extends Component {
 
           this.rnd.updatePosition({ x: 0, y: 0 }); // Move to top-left corner
           this.rnd.updateSize({
-            width: 500,
-            height: 600,
+            width: window.innerWidth,
+            height: window.innerHeight,
           }); // Resize to full screen
         } else {
           // Exiting full screen
@@ -52,8 +52,11 @@ export class Window1 extends Component {
           <div onClick={this.toggleFullScreen} class="text-white px-2">
             Resume
           </div>
-          <div onClick={this.toggleFullScreen} class="text-white px-2">
-            X
+          <div class=" grid grid-flow-col justify-end">
+            <div onClick={this.toggleFullScreen} class="text-white px-2">
+              B
+            </div>
+            <div class="text-white px-2">X</div>
           </div>
         </div>
         <div className="body" class="bg-slate-100">
