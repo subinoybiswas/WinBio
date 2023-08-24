@@ -6,8 +6,13 @@ export class Window1 extends Component {
     originalPosition: { x: 100, y: 100 }, // Set your initial position here
     originalSize: { width: 400, height: 300 },
   };
-
+  toogleClick = () => {
+    if (this.props.clicked) {
+      this.props.handleToggleClick();
+    }
+  };
   toggleFullScreen = () => {
+    console.log(this.props);
     this.setState(
       (prevState) => ({
         isFullScreen: !prevState.isFullScreen,
@@ -16,7 +21,7 @@ export class Window1 extends Component {
         const { x, y } = this.rnd.draggable.state;
         const { width, height } = this.rnd.resizable.state;
 
-        console.log(x, y);
+        //console.log(x, y);
         if (this.state.isFullScreen) {
           this.setState({
             originalPosition: { x, y },
@@ -31,7 +36,7 @@ export class Window1 extends Component {
           }); // Resize to full screen
         } else {
           // Exiting full screen
-          console.log(this.rnd);
+          //console.log(this.rnd);
 
           this.rnd.updatePosition({
             x: this.state.originalPosition.x,
@@ -45,18 +50,19 @@ export class Window1 extends Component {
       }
     );
   };
+
   render() {
     const Box = () => (
       <div class="mx-0 my-0 h-[100%] bg-white">
         <div class="bg-black grid grid-flow-col justify-between w-[100%] ">
-          <div onClick={this.toggleFullScreen} class="text-white px-2">
-            Resume
-          </div>
+          <div class="text-white px-2">Resume</div>
           <div class=" grid grid-flow-col justify-end">
             <div onClick={this.toggleFullScreen} class="text-white px-2">
               B
             </div>
-            <div class="text-white px-2">X</div>
+            <div onClick={this.toogleClick} class="text-white px-2">
+              X
+            </div>
           </div>
         </div>
         <div className="body" class="bg-slate-100">
