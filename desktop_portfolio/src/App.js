@@ -18,11 +18,14 @@ function App() {
       setIsActive(false);
     }
   };
+
   return (
     <div
       onClick={bgclick}
-      className="BG"
-      class=" bg-[#018281] min-h-screen max-h-[95vh] max-w-[100vw] overflow-hidden"
+      class={
+        " bg-[#018281] min-h-[100vh] max-h-screen  min-w-[100vw] max-w-[100vw]" +
+        {}
+      }
     >
       <Bg />
       <Window1 />

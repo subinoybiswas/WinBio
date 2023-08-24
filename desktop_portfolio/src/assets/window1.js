@@ -27,7 +27,7 @@ export class Window1 extends Component {
           this.rnd.updatePosition({ x: 0, y: 0 }); // Move to top-left corner
           this.rnd.updateSize({
             width: window.innerWidth,
-            height: window.innerHeight,
+            height: window.innerHeight-40,
           }); // Resize to full screen
         } else {
           // Exiting full screen
