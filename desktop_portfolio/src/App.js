@@ -19,7 +19,6 @@ function App() {
     2.1: setClicked2,
     3: clicked3,
     3.1: setClicked3,
-
   };
   //console.log("Type of functions: ", typeof functions);
   const handleToggleClick = (x) => {
@@ -48,7 +47,7 @@ function App() {
       onClick={bgclick}
       style={{
         backgroundImage: `url(${bgimg})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
       class={
