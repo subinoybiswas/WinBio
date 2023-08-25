@@ -7,13 +7,21 @@ import bgimg from "./winbg.png";
 
 function App() {
   const [clicked, setClicked] = useState(false);
-  console.log(clicked);
-  const handleToggleClick = () => {
-    //console.log("hi");
-    setClicked(false);
+  const [clicked2, setClicked2] = useState(false);
+  //console.log(clicked);
+  var functions = {
+    1: clicked,
+    1.1: setClicked,
+    2: clicked2,
+    2.1: setClicked2,
   };
-  const openwin1 = () => {
-    setClicked(true);
+  //console.log("Type of functions: ", typeof functions);
+  const handleToggleClick = (x) => {
+    //console.log("hi");
+    functions[x](false);
+  };
+  const openwin1 = (x) => {
+    functions[x](true);
   };
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
@@ -42,9 +50,9 @@ function App() {
         {}
       }
     >
-      <Bg clicked={clicked} openwin1={openwin1} />
-      {clicked ? (
-        <Window1 clicked={clicked} handleToggleClick={handleToggleClick} />
+      <Bg {...functions} openwin1={openwin1} />
+      {functions[1] ? (
+        <Window1 clicked={functions[1]} handleToggleClick={handleToggleClick} />
       ) : (
         ""
       )}

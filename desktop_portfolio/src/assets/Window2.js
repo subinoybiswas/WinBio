@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import { Rnd } from "react-rnd";
-export class Window1 extends Component {
+export class Window2 extends Component {
   state = {
     isFullScreen: false,
     originalPosition: { x: 100, y: 100 }, // Set your initial position here
     originalSize: { width: 400, height: 300 },
   };
   toogleClick = () => {
-    
     if (this.props.clicked) {
-      this.props.handleToggleClick("1.1");
+      this.props.handleToggleClick("2.1");
     }
   };
   toggleFullScreen = () => {
-    //console.log(this.props);
+    console.log(this.props);
     this.setState(
       (prevState) => ({
         isFullScreen: !prevState.isFullScreen,
