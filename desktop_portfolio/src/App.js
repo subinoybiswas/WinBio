@@ -1,6 +1,7 @@
 import "./App.css";
 import { Bg } from "./assets/bg";
 import { Window1 } from "./assets/window1";
+import { Window2 } from "./assets/Window2";
 import win from "./winlogo.png";
 import React, { useState } from "react";
 import bgimg from "./winbg.png";
@@ -51,11 +52,17 @@ function App() {
       }
     >
       <Bg {...functions} openwin1={openwin1} />
+      {functions[2] ? (
+        <Window2 clicked={functions[2]} handleToggleClick={handleToggleClick} />
+      ) : (
+        ""
+      )}
       {functions[1] ? (
         <Window1 clicked={functions[1]} handleToggleClick={handleToggleClick} />
       ) : (
         ""
       )}
+
       <div class="bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px]">
         <div>
           <div

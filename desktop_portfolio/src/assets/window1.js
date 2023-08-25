@@ -7,7 +7,6 @@ export class Window1 extends Component {
     originalSize: { width: 400, height: 300 },
   };
   toogleClick = () => {
-    
     if (this.props.clicked) {
       this.props.handleToggleClick("1.1");
     }

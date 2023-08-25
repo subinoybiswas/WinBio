@@ -3,16 +3,17 @@ import { Rnd } from "react-rnd";
 export class Window2 extends Component {
   state = {
     isFullScreen: false,
-    originalPosition: { x: 100, y: 100 }, // Set your initial position here
+    originalPosition: { x: 110, y: 100 }, // Set your initial position here
     originalSize: { width: 400, height: 300 },
   };
   toogleClick = () => {
+    console.log(this.props);
     if (this.props.clicked) {
       this.props.handleToggleClick("2.1");
     }
   };
   toggleFullScreen = () => {
-    console.log(this.props);
+    //console.log(this.props);
     this.setState(
       (prevState) => ({
         isFullScreen: !prevState.isFullScreen,
@@ -74,7 +75,7 @@ export class Window2 extends Component {
     return (
       <div
         style={{
-          width: "800px",
+          width: "200px",
           height: "400px",
         }}
       >
@@ -83,8 +84,8 @@ export class Window2 extends Component {
             this.rnd = c;
           }}
           default={{
-            x: 150,
-            y: 205,
+            x: 200,
+            y: 100,
             width: 300,
             height: 190,
           }}
