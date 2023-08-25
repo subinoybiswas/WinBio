@@ -2,6 +2,7 @@ import "./App.css";
 import { Bg } from "./assets/bg";
 import { Window1 } from "./assets/window1";
 import { Window2 } from "./assets/Window2";
+import { Window3 } from "./assets/window3";
 import win from "./winlogo.png";
 import React, { useState } from "react";
 import bgimg from "./winbg.png";
@@ -9,12 +10,16 @@ import bgimg from "./winbg.png";
 function App() {
   const [clicked, setClicked] = useState(false);
   const [clicked2, setClicked2] = useState(false);
+  const [clicked3, setClicked3] = useState(false);
   //console.log(clicked);
   var functions = {
     1: clicked,
     1.1: setClicked,
     2: clicked2,
     2.1: setClicked2,
+    3: clicked3,
+    3.1: setClicked3,
+
   };
   //console.log("Type of functions: ", typeof functions);
   const handleToggleClick = (x) => {
@@ -54,6 +59,11 @@ function App() {
       <Bg {...functions} openwin1={openwin1} />
       {functions[2] ? (
         <Window2 clicked={functions[2]} handleToggleClick={handleToggleClick} />
+      ) : (
+        ""
+      )}
+      {functions[3] ? (
+        <Window3 clicked={functions[3]} handleToggleClick={handleToggleClick} />
       ) : (
         ""
       )}

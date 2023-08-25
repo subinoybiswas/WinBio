@@ -36,7 +36,7 @@ export class Window1 extends Component {
           }); // Resize to full screen
         } else {
           // Exiting full screen
-          //console.log(this.rnd);
+          console.log(this.rnd);
 
           this.rnd.updatePosition({
             x: this.state.originalPosition.x,
@@ -72,29 +72,22 @@ export class Window1 extends Component {
     );
 
     return (
-      <div
-        style={{
-          width: "800px",
-          height: "400px",
+      <Rnd
+        ref={(c) => {
+          this.rnd = c;
         }}
+        default={{
+          x: 150,
+          y: 205,
+          width: 300,
+          height: 190,
+        }}
+        minWidth={211}
+        minHeight={191}
+        bounds="window"
       >
-        <Rnd
-          ref={(c) => {
-            this.rnd = c;
-          }}
-          default={{
-            x: 150,
-            y: 205,
-            width: 300,
-            height: 190,
-          }}
-          minWidth={200}
-          minHeight={190}
-          bounds="window"
-        >
-          <Box />
-        </Rnd>
-      </div>
+        <Box />
+      </Rnd>
     );
   }
 }

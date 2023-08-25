@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Rnd } from "react-rnd";
-export class Window2 extends Component {
+export class Window3 extends Component {
   state = {
     isFullScreen: false,
     originalPosition: { x: 110, y: 100 }, // Set your initial position here
@@ -9,7 +9,7 @@ export class Window2 extends Component {
   toogleClick = () => {
     console.log(this.props);
     if (this.props.clicked) {
-      this.props.handleToggleClick("2.1");
+      this.props.handleToggleClick("3.1");
     }
   };
   toggleFullScreen = () => {
@@ -78,13 +78,13 @@ export class Window2 extends Component {
           this.rnd = c;
         }}
         default={{
-          x: 200,
-          y: 100,
+          x: 270,
+          y: 120,
           width: 300,
           height: 190,
         }}
-        minWidth={200}
-        minHeight={190}
+        minWidth={210}
+        minHeight={195}
         bounds="window"
       >
         <Box />
