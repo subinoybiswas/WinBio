@@ -6,11 +6,14 @@ import React, { useState } from "react";
 import bgimg from "./winbg.png";
 
 function App() {
-  const [clicked, setClicked] = useState(true);
+  const [clicked, setClicked] = useState(false);
   console.log(clicked);
   const handleToggleClick = () => {
     //console.log("hi");
     setClicked(false);
+  };
+  const openwin1 = () => {
+    setClicked(true);
   };
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
@@ -39,7 +42,7 @@ function App() {
         {}
       }
     >
-      <Bg />
+      <Bg clicked={clicked} openwin1={openwin1} />
       {clicked ? (
         <Window1 clicked={clicked} handleToggleClick={handleToggleClick} />
       ) : (
