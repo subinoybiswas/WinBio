@@ -12,7 +12,7 @@ export class Bg extends Component {
       <div class="fixed left-0 text-white min-h-full w-[200px]">
         <div class=" text-center absolute left-0 mx-2.5 grid grid-flow-row  ">
           <div
-            onClick={this.toogleClick}
+            onDoubleClick={this.toogleClick}
             class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 "
           >
             <img class="object-contain" src={Diamond} alt="Hi"></img>
