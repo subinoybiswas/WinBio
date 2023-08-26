@@ -5,16 +5,22 @@ export class Window2 extends Component {
     isFullScreen: false,
     originalPosition: { x: 100, y: 100 }, // Set your initial position here
     originalSize: { width: 400, height: 300 },
-    zIndex: this.props[2.2],
   };
 
   divclick = async (x) => {
-    await this.props[1 + 0.3](0);
-    await this.props[3 + 0.3](0);
-    await this.props[x + 0.3](10);
+    for (let i = 1; i <= 3; i++) {
+      if (i === x) {
+        await this.props[i + 0.3](10);
+      } else {
+        if (this.props[i + 0.2] === 10) {
+          await this.props[i + 0.3](1);
+        } else {
+          await this.props[i + 0.3](0);
+        }
+      }
+    }
     // await this.setState({ z: this.props.active });
-    await this.setState({ zIndex: this.props[x + 0.2] });
-    console.log(this.props[1.2], this.props[2.2], this.props[3.2]);
+    //console.log(this.props[1.2], this.props[2.2], this.props[3.2]);
   };
 
   toogleClick = () => {
