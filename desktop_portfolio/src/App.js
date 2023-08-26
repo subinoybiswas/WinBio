@@ -12,20 +12,31 @@ function App() {
   const [clicked2, setClicked2] = useState(false);
   const [clicked3, setClicked3] = useState(false);
   const [activeWin, setactivewin] = useState(null);
+  const [z, setz] = useState(1);
+  const [z2, setz2] = useState(2);
+  const [z3, setz3] = useState(3);
   //console.log(clicked);
   var functions = {
     1: clicked,
     1.1: setClicked,
+    1.2: z,
+    1.3: setz,
     2: clicked2,
     2.1: setClicked2,
+    2.2: z2,
+    2.3: setz2,
     3: clicked3,
     3.1: setClicked3,
+    3.2: z3,
+    3.3: setz3,
     active: activeWin,
     setactive: setactivewin,
   };
+
   //console.log("Type of functions: ", typeof functions);
   const handleToggleClick = (x) => {
     //console.log("hi");
+    console.log(Window2);
     functions[x](false);
   };
   const openwin1 = (x) => {

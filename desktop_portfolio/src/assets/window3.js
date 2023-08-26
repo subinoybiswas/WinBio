@@ -5,15 +5,16 @@ export class Window3 extends Component {
     isFullScreen: false,
     originalPosition: { x: 100, y: 100 }, // Set your initial position here
     originalSize: { width: 400, height: 300 },
-    z: this.props.active,
-    zIndex: 1,
+    zIndex: this.props[3.2],
   };
 
   divclick = async (x) => {
-    await this.props.setactive(x);
-    await this.setState({ z: this.props.active });
-    await this.setState({ zIndex: this.state.z === x ? 10 : 3 });
-    console.log(this.state.z, this.state.zIndex);
+    await this.props[2 + 0.3](0);
+    await this.props[1 + 0.3](0);
+    await this.props[x + 0.3](10);
+    // await this.setState({ z: this.props.active });
+    await this.setState({ zIndex: this.props[x + 0.2] });
+    console.log(this.props[1.2], this.props[2.2], this.props[3.2]);
   };
   toogleClick = () => {
     console.log(this.props);
@@ -96,11 +97,10 @@ export class Window3 extends Component {
         minWidth={210}
         minHeight={195}
         bounds="window"
-        style={{ zIndex: this.state.zIndex }}
+        style={{ zIndex: this.props[3.2] }}
         onClick={() => {
-          this.divclick("win3");
+          this.divclick(3);
         }}
-        
       >
         <Box />
       </Rnd>
