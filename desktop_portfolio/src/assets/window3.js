@@ -3,15 +3,25 @@ import { Rnd } from "react-rnd";
 export class Window3 extends Component {
   state = {
     isFullScreen: false,
-    originalPosition: { x: 110, y: 100 }, // Set your initial position here
+    originalPosition: { x: 100, y: 100 }, // Set your initial position here
     originalSize: { width: 400, height: 300 },
+    z: this.props.active,
+    zIndex: 1,
+  };
+
+  divclick = async (x) => {
+    await this.props.setactive(x);
+    await this.setState({ z: this.props.active });
+    await this.setState({ zIndex: this.state.z === x ? 10 : 3 });
+    console.log(this.state.z, this.state.zIndex);
   };
   toogleClick = () => {
     console.log(this.props);
-    if (this.props.clicked) {
+    if (this.props[3]) {
       this.props.handleToggleClick("3.1");
     }
   };
+
   toggleFullScreen = () => {
     //console.log(this.props);
     this.setState(
@@ -86,6 +96,11 @@ export class Window3 extends Component {
         minWidth={210}
         minHeight={195}
         bounds="window"
+        style={{ zIndex: this.state.zIndex }}
+        onClick={() => {
+          this.divclick("win3");
+        }}
+        
       >
         <Box />
       </Rnd>

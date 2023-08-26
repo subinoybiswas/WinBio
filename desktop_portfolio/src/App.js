@@ -11,6 +11,7 @@ function App() {
   const [clicked, setClicked] = useState(false);
   const [clicked2, setClicked2] = useState(false);
   const [clicked3, setClicked3] = useState(false);
+  const [activeWin, setactivewin] = useState(null);
   //console.log(clicked);
   var functions = {
     1: clicked,
@@ -19,6 +20,8 @@ function App() {
     2.1: setClicked2,
     3: clicked3,
     3.1: setClicked3,
+    active: activeWin,
+    setactive: setactivewin,
   };
   //console.log("Type of functions: ", typeof functions);
   const handleToggleClick = (x) => {
@@ -57,17 +60,17 @@ function App() {
     >
       <Bg {...functions} openwin1={openwin1} />
       {functions[2] ? (
-        <Window2 clicked={functions[2]} handleToggleClick={handleToggleClick} />
+        <Window2 {...functions} handleToggleClick={handleToggleClick} />
       ) : (
         ""
       )}
       {functions[3] ? (
-        <Window3 clicked={functions[3]} handleToggleClick={handleToggleClick} />
+        <Window3 {...functions} handleToggleClick={handleToggleClick} />
       ) : (
         ""
       )}
       {functions[1] ? (
-        <Window1 clicked={functions[1]} handleToggleClick={handleToggleClick} />
+        <Window1 {...functions} handleToggleClick={handleToggleClick} />
       ) : (
         ""
       )}

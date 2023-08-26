@@ -5,9 +5,18 @@ export class Window1 extends Component {
     isFullScreen: false,
     originalPosition: { x: 100, y: 100 }, // Set your initial position here
     originalSize: { width: 400, height: 300 },
+    z: this.props.active,
+    zIndex: 1,
+  };
+
+  divclick = async (x) => {
+    await this.props.setactive(x);
+    await this.setState({ z: this.props.active });
+    await this.setState({ zIndex: this.state.z === x ? 10 : 1 });
+    console.log(this.state.z, this.state.zIndex);
   };
   toogleClick = () => {
-    if (this.props.clicked) {
+    if (this.props[1]) {
       this.props.handleToggleClick("1.1");
     }
   };
@@ -85,6 +94,10 @@ export class Window1 extends Component {
         minWidth={211}
         minHeight={191}
         bounds="window"
+        style={{ zIndex: this.state.zIndex }}
+        onClick={() => {
+          this.divclick("win1");
+        }}
       >
         <Box />
       </Rnd>
