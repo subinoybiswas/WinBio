@@ -11,11 +11,11 @@ function App() {
   const [clicked, setClicked] = useState(false);
   const [clicked2, setClicked2] = useState(false);
   const [clicked3, setClicked3] = useState(false);
-  const [activeWin, setactivewin] = useState(null);
   const [z, setz] = useState(1);
   const [z2, setz2] = useState(2);
   const [z3, setz3] = useState(3);
   //console.log(clicked);
+
   var functions = {
     1: clicked,
     1.1: setClicked,
@@ -29,10 +29,21 @@ function App() {
     3.1: setClicked3,
     3.2: z3,
     3.3: setz3,
-    active: activeWin,
-    setactive: setactivewin,
   };
 
+  const windowSet = async (x) => {
+    for (let i = 1; i <= 3; i++) {
+      if (i === x) {
+        await functions[i + 0.3](10);
+      } else {
+        if (functions[i + 0.2] === 10) {
+          await functions[i + 0.3](1);
+        } else {
+          await functions[i + 0.3](0);
+        }
+      }
+    }
+  };
   //console.log("Type of functions: ", typeof functions);
   const handleToggleClick = (x) => {
     //console.log("hi");
@@ -71,17 +82,29 @@ function App() {
     >
       <Bg {...functions} openwin1={openwin1} />
       {functions[2] ? (
-        <Window2 {...functions} handleToggleClick={handleToggleClick} />
+        <Window2
+          {...functions}
+          handleToggleClick={handleToggleClick}
+          windowset={windowSet}
+        />
       ) : (
         ""
       )}
       {functions[3] ? (
-        <Window3 {...functions} handleToggleClick={handleToggleClick} />
+        <Window3
+          {...functions}
+          handleToggleClick={handleToggleClick}
+          windowset={windowSet}
+        />
       ) : (
         ""
       )}
       {functions[1] ? (
-        <Window1 {...functions} handleToggleClick={handleToggleClick} />
+        <Window1
+          {...functions}
+          handleToggleClick={handleToggleClick}
+          windowset={windowSet}
+        />
       ) : (
         ""
       )}
