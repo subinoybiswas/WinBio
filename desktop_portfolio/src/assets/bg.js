@@ -5,7 +5,7 @@ export class Bg extends Component {
     //console.log(this.props);
     if (!this.props[y]) {
       this.props.openwin1(x);
-      this.props.windowset(1);
+      this.props.windowset(parseInt(y));
     }
   };
 
