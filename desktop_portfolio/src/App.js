@@ -131,6 +131,12 @@ function App() {
       ) : (
         ""
       )}
+
+      {isActive ? (
+        <div class=" fixed h-[60vh] w-[250px] bg-black left-[0px] bottom-10">Hi</div>
+      ) : (
+        <></>
+      )}
       <div class="cursor-pointer bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px] z-[100]">
         <div class="grid grid-flow-col justify-start ">
           <div class="mx-1 h-[28px] w-[90px] ">
