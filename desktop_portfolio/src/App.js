@@ -122,7 +122,7 @@ function App() {
       ) : (
         ""
       )}
-      <div class="bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px]">
+      <div class="bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px] z-[100]">
         <div class="grid grid-flow-col justify-start ">
           <div class="mx-1 h-[28px] w-[90px] ">
             <div
