@@ -32,7 +32,7 @@ function App() {
   };
 
   const windowSet = async (x) => {
-   // console.log(typeof x);
+    // console.log(typeof x);
     for (let i = 1; i <= 3; i++) {
       if (i === x) {
         await functions[i + 0.3](10);
@@ -44,14 +44,32 @@ function App() {
           await functions[i + 0.3](0);
         }
       }
-      await console.log(z, z2, z3);
     }
   };
+
+  const windowClose = async (x) => {
+    console.log(x);
+    for (let i = 1; i <= 3; i++) {
+      if (i === x) {
+        await functions[i + 0.3](0);
+        // await console.log(z);
+      } else {
+        if (functions[i + 0.2] === 1) {
+          await functions[i + 0.3](10);
+        } else {
+          await functions[i + 0.3](1);
+        }
+      }
+    }
+  };
+
   //console.log("Type of functions: ", typeof functions);
-  const handleToggleClick = (x) => {
+  const handleToggleClick = async (x) => {
     //console.log("hi");
     //console.log(Window2);
-    functions[x](false);
+    functions[x + 0.1](false);
+    await windowClose(x);
+    await console.log(z, z2, z3);
   };
   const openwin1 = (x) => {
     functions[x](true);
@@ -89,6 +107,7 @@ function App() {
           {...functions}
           handleToggleClick={handleToggleClick}
           windowset={windowSet}
+          windowclose={windowClose}
         />
       ) : (
         ""
@@ -98,6 +117,7 @@ function App() {
           {...functions}
           handleToggleClick={handleToggleClick}
           windowset={windowSet}
+          windowclose={windowClose}
         />
       ) : (
         ""
@@ -107,6 +127,7 @@ function App() {
           {...functions}
           handleToggleClick={handleToggleClick}
           windowset={windowSet}
+          windowclose={windowClose}
         />
       ) : (
         ""
@@ -145,7 +166,9 @@ function App() {
             <div
               class={
                 " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
-                " border-white border-e-black border-b-black"
+                (z2 === 10
+                  ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
+                  : "  border-e-black border-b-black")
               }
             >
               APP2

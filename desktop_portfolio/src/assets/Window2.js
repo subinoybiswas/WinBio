@@ -13,10 +13,11 @@ export class Window2 extends Component {
     //console.log(this.props[1.2], this.props[2.2], this.props[3.2]);
   };
 
-  toogleClick = () => {
+  toogleClick = async () => {
     console.log(this.props);
     if (this.props[2]) {
-      this.props.handleToggleClick("2.1");
+      //   await this.props.windowclose(2);
+      this.props.handleToggleClick(2);
     }
   };
 
@@ -64,7 +65,14 @@ export class Window2 extends Component {
     const Box = () => (
       <div class="mx-0 my-0 h-[100%] bg-white">
         <div class="bg-black grid grid-flow-col justify-between w-[100%] ">
-          <div class="text-white px-2">Resume</div>
+          <div
+            class="text-white px-2"
+            onClick={() => {
+              this.divclick(2);
+            }}
+          >
+            Resume
+          </div>
           <div class=" grid grid-flow-col justify-end">
             <div onClick={this.toggleFullScreen} class="text-white px-2">
               B
@@ -74,7 +82,13 @@ export class Window2 extends Component {
             </div>
           </div>
         </div>
-        <div className="body" class="bg-slate-100">
+        <div
+          onClick={() => {
+            this.divclick(2);
+          }}
+          className="body"
+          class="bg-slate-100 h-[100%]"
+        >
           hi
         </div>
       </div>
@@ -95,9 +109,6 @@ export class Window2 extends Component {
         minHeight={190}
         bounds="window"
         style={{ zIndex: this.props[2.2] }}
-        onClick={() => {
-          this.divclick(2);
-        }}
       >
         <Box />
       </Rnd>

@@ -64,7 +64,14 @@ export class Window3 extends Component {
     const Box = () => (
       <div class="mx-0 my-0 h-[100%] bg-white">
         <div class="bg-black grid grid-flow-col justify-between w-[100%] ">
-          <div class="text-white px-2">Resume</div>
+          <div
+            class="text-white px-2"
+            onClick={() => {
+              this.divclick(3);
+            }}
+          >
+            Resume
+          </div>
           <div class=" grid grid-flow-col justify-end">
             <div onClick={this.toggleFullScreen} class="text-white px-2">
               B
@@ -74,7 +81,13 @@ export class Window3 extends Component {
             </div>
           </div>
         </div>
-        <div className="body" class="bg-slate-100">
+        <div
+          onClick={() => {
+            this.divclick(3);
+          }}
+          className="body"
+          class="bg-slate-100 h-[100%]"
+        >
           hi
         </div>
       </div>
@@ -95,9 +108,6 @@ export class Window3 extends Component {
         minHeight={195}
         bounds="window"
         style={{ zIndex: this.props[3.2] }}
-        onClick={() => {
-          this.divclick(3);
-        }}
       >
         <Box />
       </Rnd>
