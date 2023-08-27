@@ -5,8 +5,10 @@ export class Bg extends Component {
     //console.log(this.props);
     if (!this.props[y]) {
       this.props.openwin1(x);
+      this.props.windowset(1);
     }
   };
+
   render() {
     return (
       <div class="fixed left-0 text-white min-h-full w-[200px]">

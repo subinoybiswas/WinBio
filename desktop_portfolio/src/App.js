@@ -32,9 +32,11 @@ function App() {
   };
 
   const windowSet = async (x) => {
+   // console.log(typeof x);
     for (let i = 1; i <= 3; i++) {
       if (i === x) {
         await functions[i + 0.3](10);
+        // await console.log(z);
       } else {
         if (functions[i + 0.2] === 10) {
           await functions[i + 0.3](1);
@@ -42,12 +44,13 @@ function App() {
           await functions[i + 0.3](0);
         }
       }
+      await console.log(z, z2, z3);
     }
   };
   //console.log("Type of functions: ", typeof functions);
   const handleToggleClick = (x) => {
     //console.log("hi");
-    console.log(Window2);
+    //console.log(Window2);
     functions[x](false);
   };
   const openwin1 = (x) => {
@@ -80,7 +83,7 @@ function App() {
         {}
       }
     >
-      <Bg {...functions} openwin1={openwin1} />
+      <Bg {...functions} openwin1={openwin1} windowset={windowSet} />
       {functions[2] ? (
         <Window2
           {...functions}
@@ -108,28 +111,48 @@ function App() {
       ) : (
         ""
       )}
-
       <div class="bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px]">
-        <div>
-          <div
-            onClick={handleClick}
-            class={
-              "border-t-2 border-s-2 bg-[#C0C0C0] my-[5px] mx-1.5 left-0 grid grid-flow-col content-center" +
-              (isActive
-                ? "  h-[28px] w-[70px] border-black  "
-                : " h-[28px] w-[70px] border-white shadow-[2.0px_2.0px_2.0px_rgba(0,0,0,1)] ")
-            }
-          >
-            <img
-              src={win}
-              alt="Win"
-              class="ml-1 mt-0.5 h-[20px] w-[20px]"
-            ></img>
-            <div class="">Start</div>
+        <div class="grid grid-flow-col justify-start ">
+          <div class="mx-1 h-[28px] w-[90px] ">
+            <div
+              onClick={handleClick}
+              class={
+                "border-t-2 border-s-2 bg-[#C0C0C0] my-[5px] mx-1  grid grid-flow-col content-center border-e-[3px] border-b-[3px]" +
+                (isActive
+                  ? "   border-t-black border-s-black   "
+                  : "  border-white   border-e-black border-b-black")
+              }
+            >
+              <img
+                src={win}
+                alt="Win"
+                class="ml-1 mt-0.5 h-[20px] w-[20px]"
+              ></img>
+              <div class="">Start</div>
+            </div>
           </div>
+          <div className="  grid grid-flow-col  h-[28px] items-center">
+            <div
+              class={
+                " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
+                (z === 10
+                  ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
+                  : "  border-e-black border-b-black")
+              }
+            >
+              APP1
+            </div>
+            <div
+              class={
+                " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
+                " border-white border-e-black border-b-black"
+              }
+            >
+              APP2
+            </div>
+          </div>
+          <div className="Time"></div>
         </div>
-
-        <div className="Time"></div>
       </div>
     </div>
   );
