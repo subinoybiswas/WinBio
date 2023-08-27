@@ -11,9 +11,13 @@ function App() {
   const [clicked, setClicked] = useState(false);
   const [clicked2, setClicked2] = useState(false);
   const [clicked3, setClicked3] = useState(false);
-  const [z, setz] = useState(0);
-  const [z2, setz2] = useState(0);
-  const [z3, setz3] = useState(0);
+  const [z, setz] = useState(1);
+  const [z2, setz2] = useState(2);
+  const [z3, setz3] = useState(3);
+  const [o, seto] = useState(0);
+  const [o2, seto2] = useState(0);
+  const [o3, seto3] = useState(0);
+
   //console.log(clicked);
 
   var functions = {
@@ -21,14 +25,17 @@ function App() {
     1.1: setClicked,
     1.2: z,
     1.3: setz,
+    1.4: seto,
     2: clicked2,
     2.1: setClicked2,
     2.2: z2,
     2.3: setz2,
+    2.4: seto2,
     3: clicked3,
     3.1: setClicked3,
     3.2: z3,
     3.3: setz3,
+    3.4: seto3,
   };
 
   const windowSet = async (x) => {
@@ -38,7 +45,7 @@ function App() {
         await functions[i + 0.3](10);
         // await console.log(z);
       } else {
-        await functions[i + 0.3](0);
+        await functions[i + 0.3](i);
       }
     }
   };
@@ -59,10 +66,12 @@ function App() {
     //console.log(Window2);
     functions[x + 0.1](false);
     await windowClose(x);
+    functions[x + 0.4](0);
     await console.log(z, z2, z3);
   };
   const openwin1 = (x) => {
-    functions[x](true);
+    functions[x + 0.1](true);
+    functions[x + 0.4](1);
   };
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
@@ -122,7 +131,7 @@ function App() {
       ) : (
         ""
       )}
-      <div class="bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px] z-[100]">
+      <div class="cursor-pointer bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px] z-[100]">
         <div class="grid grid-flow-col justify-start ">
           <div class="mx-1 h-[28px] w-[90px] ">
             <div
@@ -143,36 +152,48 @@ function App() {
             </div>
           </div>
           <div className="  grid grid-flow-col  h-[28px] items-center">
-            <div
-              class={
-                " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
-                (z === 10
-                  ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
-                  : "  border-e-black border-b-black")
-              }
-            >
-              APP1
-            </div>
-            <div
-              class={
-                " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
-                (z2 === 10
-                  ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
-                  : "  border-e-black border-b-black")
-              }
-            >
-              APP2
-            </div>
-            <div
-              class={
-                " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
-                (z3 === 10
-                  ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
-                  : "  border-e-black border-b-black")
-              }
-            >
-              APP3
-            </div>
+            {o !== 0 ? (
+              <div
+                class={
+                  " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
+                  (z === 10
+                    ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
+                    : "  border-e-black border-b-black")
+                }
+              >
+                APP1
+              </div>
+            ) : (
+              <></>
+            )}
+            {o2 !== 0 ? (
+              <div
+                class={
+                  " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
+                  (z2 === 10
+                    ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
+                    : "  border-e-black border-b-black")
+                }
+              >
+                APP2
+              </div>
+            ) : (
+              <></>
+            )}
+            {o3 !== 0 ? (
+              <div
+                class={
+                  " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
+                  (z3 === 10
+                    ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
+                    : "  border-e-black border-b-black")
+                }
+              >
+                APP3
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
           <div className="Time"></div>
         </div>

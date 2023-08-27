@@ -63,10 +63,7 @@ export class Window2 extends Component {
 
   render() {
     const Box = () => (
-      <div
-        style={{ cursor: "default" }}
-        class="mx-0 my-0 h-[95%] drop-shadow-lg bg-white"
-      >
+      <div class=" cursor-pointer mx-0 my-0 h-[95%] drop-shadow-lg bg-white">
         <div class="bg-black grid grid-flow-col justify-between w-[100%] ">
           <div
             class="text-white px-2"

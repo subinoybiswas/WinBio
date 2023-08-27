@@ -61,10 +61,7 @@ export class Window1 extends Component {
 
   render() {
     const Box = () => (
-      <div
-        style={{ cursor: "default" }}
-        class="mx-0 my-0 h-[95%] drop-shadow-lg bg-white"
-      >
+      <div class=" cursor-pointer mx-0 my-0 h-[95%] drop-shadow-lg bg-white">
         <div class="bg-black grid grid-flow-col justify-between w-[100%] ">
           <div
             class="text-white px-2"
@@ -74,11 +71,11 @@ export class Window1 extends Component {
           >
             Resume
           </div>
-          <div class=" grid grid-flow-col justify-end">
+          <div class=" cursor-pointer grid grid-flow-col justify-end">
             <div onClick={this.toggleFullScreen} class="text-white px-2">
               B
             </div>
-            <div onClick={this.toogleClick} class="text-white px-2">
+            <div onClick={this.toogleClick} class=" cursor-pointer text-white px-2">
               X
             </div>
           </div>
