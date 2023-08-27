@@ -61,7 +61,7 @@ export class Window1 extends Component {
 
   render() {
     const Box = () => (
-      <div class="mx-0 my-0 h-[100%] bg-white">
+      <div style={{ cursor: "default" }} class="mx-0 my-0 h-[100%] bg-white">
         <div class="bg-black grid grid-flow-col justify-between w-[100%] ">
           <div
             class="text-white px-2"
@@ -107,6 +107,7 @@ export class Window1 extends Component {
         minHeight={191}
         bounds="window"
         style={{ zIndex: this.props[1.2] }}
+        // onDrag={this.divclick(1)}
       >
         <Box />
       </Rnd>
