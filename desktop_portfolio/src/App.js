@@ -133,7 +133,14 @@ function App() {
       )}
 
       {isActive ? (
-        <div class=" fixed h-[60vh] w-[250px] bg-black left-[0px] bottom-10">Hi</div>
+        <div class=" fixed h-[400px] w-[250px] bg-black left-0 bottom-10 z-[100]">
+          <div class=" bg-emerald-300 h-[60vh] w-[35px] ">
+            <div class="  fixed text-black bg-zinc-50 w-[200px] h-[35px] ml-1 -left-[90px] bottom-[19%] -rotate-90">
+              Windows Me
+            </div>
+          </div>
+          Hi
+        </div>
       ) : (
         <></>
       )}
