@@ -13,10 +13,11 @@ export class Window3 extends Component {
     //console.log(this.props[1.2], this.props[2.2], this.props[3.2]);
   };
 
-  toogleClick = () => {
+  toogleClick = async () => {
     console.log(this.props);
     if (this.props[3]) {
-      this.props.handleToggleClick("3.1");
+      //   await this.props.windowclose(2);
+      this.props.handleToggleClick(3);
     }
   };
 

@@ -11,9 +11,9 @@ function App() {
   const [clicked, setClicked] = useState(false);
   const [clicked2, setClicked2] = useState(false);
   const [clicked3, setClicked3] = useState(false);
-  const [z, setz] = useState(1);
-  const [z2, setz2] = useState(2);
-  const [z3, setz3] = useState(3);
+  const [z, setz] = useState(0);
+  const [z2, setz2] = useState(0);
+  const [z3, setz3] = useState(0);
   //console.log(clicked);
 
   var functions = {
@@ -38,11 +38,7 @@ function App() {
         await functions[i + 0.3](10);
         // await console.log(z);
       } else {
-        if (functions[i + 0.2] === 10) {
-          await functions[i + 0.3](1);
-        } else {
-          await functions[i + 0.3](0);
-        }
+        await functions[i + 0.3](0);
       }
     }
   };
@@ -53,12 +49,6 @@ function App() {
       if (i === x) {
         await functions[i + 0.3](0);
         // await console.log(z);
-      } else {
-        if (functions[i + 0.2] === 1) {
-          await functions[i + 0.3](10);
-        } else {
-          await functions[i + 0.3](1);
-        }
       }
     }
   };
@@ -172,6 +162,16 @@ function App() {
               }
             >
               APP2
+            </div>
+            <div
+              class={
+                " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
+                (z3 === 10
+                  ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
+                  : "  border-e-black border-b-black")
+              }
+            >
+              APP3
             </div>
           </div>
           <div className="Time"></div>
