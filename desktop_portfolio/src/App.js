@@ -69,6 +69,19 @@ function App() {
     functions[x + 0.4](0);
     await console.log(z, z2, z3);
   };
+
+  const minimize = (x) => {
+    //console.log("hi");
+    //console.log(Window2);
+    functions[x + 0.1](false);
+    windowClose(x);
+  };
+
+  const maximize = (x) => {
+    functions[x + 0.1](true);
+    windowSet(x);
+  };
+
   const openwin1 = (x) => {
     functions[x + 0.1](true);
     functions[x + 0.4](1);
@@ -107,6 +120,7 @@ function App() {
           handleToggleClick={handleToggleClick}
           windowset={windowSet}
           windowclose={windowClose}
+          Minimize={minimize}
         />
       ) : (
         ""
@@ -117,6 +131,7 @@ function App() {
           handleToggleClick={handleToggleClick}
           windowset={windowSet}
           windowclose={windowClose}
+          Minimize={minimize}
         />
       ) : (
         ""
@@ -127,6 +142,7 @@ function App() {
           handleToggleClick={handleToggleClick}
           windowset={windowSet}
           windowclose={windowClose}
+          Minimize={minimize}
         />
       ) : (
         ""
@@ -173,6 +189,7 @@ function App() {
                     ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
                     : "  border-e-black border-b-black")
                 }
+                onClick={() => maximize(1)}
               >
                 APP1
               </div>
@@ -187,6 +204,7 @@ function App() {
                     ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
                     : "  border-e-black border-b-black")
                 }
+                onClick={() => maximize(2)}
               >
                 APP2
               </div>
@@ -201,6 +219,7 @@ function App() {
                     ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
                     : "  border-e-black border-b-black")
                 }
+                onClick={() => maximize(3)}
               >
                 APP3
               </div>

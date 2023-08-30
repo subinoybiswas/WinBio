@@ -13,6 +13,10 @@ export class Window3 extends Component {
     //console.log(this.props[1.2], this.props[2.2], this.props[3.2]);
   };
 
+  minimizewin = (x) => {
+    this.props.Minimize(x);
+  };
+
   toogleClick = async () => {
     console.log(this.props);
     if (this.props[3]) {
@@ -63,11 +67,7 @@ export class Window3 extends Component {
 
   render() {
     const Box = () => (
-      <div
-
-        
-        class=" cursor-pointer mx-0 my-0 h-[95%] drop-shadow-lg bg-white"
-      >
+      <div class=" cursor-pointer mx-0 my-0 h-[95%] drop-shadow-lg bg-white">
         <div class="bg-black grid grid-flow-col justify-between w-[100%] ">
           <div
             class="text-white px-2"
@@ -78,6 +78,12 @@ export class Window3 extends Component {
             Resume
           </div>
           <div class=" grid grid-flow-col justify-end">
+            <div
+              onClick={(event) => this.minimizewin(3)}
+              class=" cursor-pointer text-white px-2"
+            >
+              --
+            </div>
             <div onClick={this.toggleFullScreen} class="text-white px-2">
               B
             </div>

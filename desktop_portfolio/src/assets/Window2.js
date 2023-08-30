@@ -21,6 +21,10 @@ export class Window2 extends Component {
     }
   };
 
+  minimizewin = (x) => {
+    this.props.Minimize(x);
+  };
+
   toggleFullScreen = () => {
     //console.log(this.props);
     this.setState(
@@ -74,6 +78,12 @@ export class Window2 extends Component {
             Resume
           </div>
           <div class=" grid grid-flow-col justify-end">
+            <div
+              onClick={(event) => this.minimizewin(2)}
+              class=" cursor-pointer text-white px-2"
+            >
+              --
+            </div>
             <div onClick={this.toggleFullScreen} class="text-white px-2">
               B
             </div>
