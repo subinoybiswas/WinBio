@@ -192,7 +192,7 @@ function App() {
                     }
                     onClick={() => maximize(1)}
                   >
-                    APP1
+                    Internet
                   </div>
                 ) : (
                   <></>
@@ -207,7 +207,7 @@ function App() {
                     }
                     onClick={() => maximize(2)}
                   >
-                    APP2
+                    MS-DOS
                   </div>
                 ) : (
                   <></>
