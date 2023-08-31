@@ -100,7 +100,7 @@ export class Window3 extends Component {
             this.divclick(3);
           }}
           className="body"
-          class="bg-slate-100 h-[100%]"
+          class="bg-slate-100 h-[100%] text-black"
         >
           hi
         </div>

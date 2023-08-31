@@ -156,7 +156,7 @@ export class Window2 extends Component {
             this.divclick(2);
           }}
           className="body"
-          class="bg-[#fcfcfc] h-[100%]"
+          class="bg-[#080A07] h-[100%]"
         >
           <ReactTerminal
             showControlBar={false}
@@ -174,10 +174,12 @@ export class Window2 extends Component {
             themes={this.theme}
             theme="mytheme"
             errorMessage={(x) => {
+              
               return (
                 '"' +
                 x +
                 '"' +
+                // eslint-disable-next-line
                 " is not recognized as an internal or external command,\
               operable program or batch file."
               );
