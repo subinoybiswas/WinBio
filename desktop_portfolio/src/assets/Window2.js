@@ -16,10 +16,10 @@ export class Window2 extends Component {
 
   theme = {
     mytheme: {
-      themeBGColor: "#272B36",
+      themeBGColor: "#080a07",
       themeToolbarColor: "#DBDBDB",
-      themeColor: "#FFFEFC",
-      themePromptColor: "#a917a8",
+      themeColor: "#fcfcfc",
+      themePromptColor: "#fcfcfc",
     },
   };
   divclick = async (x) => {
@@ -112,7 +112,7 @@ export class Window2 extends Component {
             this.divclick(2);
           }}
           className="body"
-          class="bg-slate-100 h-[100%]"
+          class="bg-[#fcfcfc] h-[100%]"
         >
           <ReactTerminal
             showControlBar={false}
