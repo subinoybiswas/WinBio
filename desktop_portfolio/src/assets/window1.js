@@ -7,13 +7,13 @@ export class Window1 extends Component {
     originalSize: { width: 400, height: 300 },
   };
 
-  divclick = async (x) => {
+  divclick = (x) => {
     this.props.windowset(x);
     // await this.setState({ z: this.props.active });
     //console.log(this.props[1.2], this.props[2.2], this.props[3.2]);
   };
 
-  toogleClick = async () => {
+  toogleClick = () => {
     if (this.props[1]) {
       // await this.props.windowclose(1);
       this.props.handleToggleClick(1);
@@ -73,7 +73,7 @@ export class Window1 extends Component {
               this.divclick(1);
             }}
           >
-            Resume
+            Internet
           </div>
           <div class=" cursor-pointer grid grid-flow-col justify-end">
             <div
@@ -100,7 +100,10 @@ export class Window1 extends Component {
           className="body"
           class="bg-slate-100 h-[100%]"
         >
-          hi
+          <iframe
+            class="w-[100%] h-[100%]"
+            src="https://oldgoogle.neocities.org/1998/"
+          ></iframe>
         </div>
       </div>
     );
@@ -112,9 +115,9 @@ export class Window1 extends Component {
         }}
         default={{
           x: 150,
-          y: 205,
-          width: 300,
-          height: 190,
+          y: 100,
+          width: 600,
+          height: 500,
         }}
         minWidth={211}
         minHeight={191}

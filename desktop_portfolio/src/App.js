@@ -42,10 +42,10 @@ function App() {
     // console.log(typeof x);
     for (let i = 1; i <= 3; i++) {
       if (i === x) {
-        await functions[i + 0.3](10);
+        functions[i + 0.3](10);
         // await console.log(z);
       } else {
-        await functions[i + 0.3](i);
+        functions[i + 0.3](i);
       }
     }
   };
@@ -54,7 +54,7 @@ function App() {
     console.log(x);
     for (let i = 1; i <= 3; i++) {
       if (i === x) {
-        await functions[i + 0.3](0);
+        functions[i + 0.3](0);
         // await console.log(z);
       }
     }
@@ -65,9 +65,9 @@ function App() {
     //console.log("hi");
     //console.log(Window2);
     functions[x + 0.1](false);
-    await windowClose(x);
+    windowClose(x);
     functions[x + 0.4](0);
-    await console.log(z, z2, z3);
+    console.log(z, z2, z3);
   };
 
   const minimize = (x) => {
