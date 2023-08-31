@@ -9,8 +9,9 @@ export class Window2 extends Component {
     originalSize: { width: 400, height: 300 },
   };
   commands = {
-    whoami: "jackharper",
+    whoami: "Subinoy",
     cd: (directory) => `changed path to ${directory}`,
+    ls: "Hi",
   };
 
   theme = {
@@ -124,10 +125,19 @@ export class Window2 extends Component {
                 <br />
               </div>
             }
-            prompt={"C:\>"}
+            prompt={"C:\\>"}
             commands={this.commands}
             themes={this.theme}
             theme="mytheme"
+            errorMessage={(x) => {
+              return (
+                '"' +
+                x +
+                '"' +
+                " is not recognized as an internal or external command,\
+              operable program or batch file."
+              );
+            }}
           />
         </div>
       </div>
@@ -141,8 +151,8 @@ export class Window2 extends Component {
         default={{
           x: 200,
           y: 100,
-          width: 300,
-          height: 190,
+          width: 700,
+          height: 500,
         }}
         minWidth={200}
         minHeight={190}
