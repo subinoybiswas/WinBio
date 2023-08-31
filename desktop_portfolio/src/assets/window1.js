@@ -124,6 +124,7 @@ export class Window1 extends Component {
         bounds="window"
         style={{ zIndex: this.props[1.2] }}
         // onDrag={this.divclick(1)}
+        
       >
         <Box />
       </Rnd>

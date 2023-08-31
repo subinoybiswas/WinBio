@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Diamond from ".././logo.svg";
+import IELogo from "../ielogo.png";
 export class Bg extends Component {
   toogleClick = (x, y) => {
     //console.log(this.props);
@@ -14,12 +15,12 @@ export class Bg extends Component {
       <div class=" cursor-pointer fixed left-0 text-white min-h-full w-[200px]">
         <div class=" text-center absolute left-0 mx-2.5 grid grid-flow-row  ">
           <div
-            class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 "
+            class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 grid grid-flow-row justify-center "
             onDoubleClick={(event) => this.toogleClick(1, "1")}
             // onClick={(event) => this.toogleClick(1, "1")}
           >
-            <img class="object-contain" src={Diamond} alt="Hi"></img>
-            <p>Home</p>
+            <img class="object-contain" src={IELogo} alt="Hi"></img>
+            <p>Internet</p>
           </div>
 
           <div

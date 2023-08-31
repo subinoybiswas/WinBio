@@ -1,12 +1,26 @@
 import React, { Component } from "react";
+import { ReactTerminal } from "react-terminal";
 import { Rnd } from "react-rnd";
+
 export class Window2 extends Component {
   state = {
     isFullScreen: false,
     originalPosition: { x: 100, y: 100 }, // Set your initial position here
     originalSize: { width: 400, height: 300 },
   };
+  commands = {
+    whoami: "jackharper",
+    cd: (directory) => `changed path to ${directory}`,
+  };
 
+  theme = {
+    mytheme: {
+      themeBGColor: "#272B36",
+      themeToolbarColor: "#DBDBDB",
+      themeColor: "#FFFEFC",
+      themePromptColor: "#a917a8",
+    },
+  };
   divclick = async (x) => {
     this.props.windowset(x);
     // await this.setState({ z: this.props.active });
@@ -99,7 +113,22 @@ export class Window2 extends Component {
           className="body"
           class="bg-slate-100 h-[100%]"
         >
-          hi
+          <ReactTerminal
+            showControlBar={false}
+            welcomeMessage={
+              <div>
+                <div>
+                  Microsoft Windows [Version 10.0.22621.2134]
+                  <br /> (c) Microsoft Corporation. All rights reserved.
+                </div>
+                <br />
+              </div>
+            }
+            prompt={"C:\>"}
+            commands={this.commands}
+            themes={this.theme}
+            theme="mytheme"
+          />
         </div>
       </div>
     );
