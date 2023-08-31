@@ -111,7 +111,6 @@ export class Window1 extends Component {
               this.divclick(1);
             }}
           ></Iframe>
-          ;
         </div>
       </div>
     );

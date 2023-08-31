@@ -160,7 +160,7 @@ function App() {
           ) : (
             <></>
           )}
-          <div class="cursor-pointer bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px] z-[100]">
+          <div class="cursor-pointer bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px] z-[100] text-black">
             <div class="grid grid-flow-col justify-start ">
               <div class="mx-1 h-[28px] w-[90px] ">
                 <div
@@ -175,9 +175,9 @@ function App() {
                   <img
                     src={win}
                     alt="Win"
-                    class="ml-1 mt-0.5 h-[20px] w-[20px]"
+                    class="ml-1 mt-0.5 h-[20px] w-[20px] "
                   ></img>
-                  <div class="">Start</div>
+                  <div class="text-black">Start</div>
                 </div>
               </div>
               <div className="  grid grid-flow-col  h-[28px] items-center">
