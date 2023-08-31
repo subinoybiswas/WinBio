@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Diamond from ".././logo.svg";
+import ReactLogo from ".././logo.svg";
 import IELogo from "../ielogo.png";
 import DOSlogo from "../msdoslogo.png";
 export class Bg extends Component {
@@ -36,12 +36,12 @@ export class Bg extends Component {
             onDoubleClick={(event) => this.toogleClick(3, "3")}
             class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 "
           >
-            <img class="object-contain" src={Diamond} alt="Hi"></img>
-            <p>Home3</p>
+            <img class="object-contain" src={ReactLogo} alt="Hi"></img>
+            <p>Resume</p>
           </div>
 
           <div class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5  ">
-            <img class="object-contain" src={Diamond} alt="Hi"></img>
+            <img class="object-contain" src={ReactLogo} alt="Hi"></img>
             <p>Home</p>
           </div>
         </div>

@@ -34,17 +34,23 @@ export class Window2 extends Component {
       this.open(1, "1");
       return "Process Internet.exe has started";
     },
+    "Resume.pdf": () => {
+      this.open(3, "3");
+      return "Opened Resume.pdf";
+    },
     exit: () => {
       this.toogleClick();
     },
     ls: () => {
-      return (
-        <div>
-          <li>Explorer.exe</li>
-          <li>MS-DOS.exe</li>
-          <li>Resume.pdf</li>
-        </div>
-      );
+      if (this.state.directory === "C:\\") {
+        return (
+          <div>
+            <li>Internet.exe</li>
+            <li>MS-DOS.exe</li>
+            <li>Resume.pdf</li>
+          </div>
+        );
+      }
     },
   };
 
@@ -174,7 +180,6 @@ export class Window2 extends Component {
             themes={this.theme}
             theme="mytheme"
             errorMessage={(x) => {
-              
               return (
                 '"' +
                 x +
