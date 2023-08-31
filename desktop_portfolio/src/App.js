@@ -121,6 +121,7 @@ function App() {
           windowset={windowSet}
           windowclose={windowClose}
           Minimize={minimize}
+          openwin1={openwin1}
         />
       ) : (
         ""

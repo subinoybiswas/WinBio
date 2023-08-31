@@ -9,6 +9,13 @@ export class Window2 extends Component {
     originalSize: { width: 400, height: 300 },
     directory: "C:\\",
   };
+  open = (x, y) => {
+    //console.log(this.props);
+    if (!this.props[y]) {
+      this.props.openwin1(x);
+      this.props.windowset(parseInt(y));
+    }
+  };
   commands = {
     whoami: "Subinoy",
     cd: (dir) => {
@@ -23,11 +30,18 @@ export class Window2 extends Component {
         directory: "C:\\",
       });
     },
+    "Internet.exe": () => {
+      this.open(1, "1");
+      return "Process Internet.exe has started";
+    },
+    "exit":()=>{
+      this.toogleClick();
+    },
     ls: () => {
       return (
         <div>
           <li>Explorer.exe</li>
-          <li>cmd.exe</li>
+          <li>MS-DOS.exe</li>
           <li>Resume.pdf</li>
         </div>
       );
@@ -110,7 +124,7 @@ export class Window2 extends Component {
               this.divclick(2);
             }}
           >
-            Resume
+            MS-DOS
           </div>
           <div class=" grid grid-flow-col justify-end">
             <div
