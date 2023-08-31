@@ -68,28 +68,30 @@ export class Window3 extends Component {
 
   render() {
     const Box = () => (
-      <div class=" cursor-pointer mx-0 my-0 h-[95%] drop-shadow-lg bg-white">
-        <div class="bg-black grid grid-flow-col justify-between w-[100%] ">
+      <div class=" cursor-pointer mx-0 my-0 h-[95%] drop-shadow-lg bg-white ">
+        <div class="grid grid-flow-col bg-black">
           <div
-            class="text-white px-2"
             onClick={() => {
               this.divclick(3);
             }}
+            class="bg-black grid grid-flow-col justify-between w-[70%] "
           >
-            Resume
+            <div class="text-white px-2 bg-black">Resume</div>
           </div>
-          <div class=" grid grid-flow-col justify-end">
-            <div
-              onClick={(event) => this.minimizewin(3)}
-              class=" cursor-pointer text-white px-2"
-            >
-              --
-            </div>
-            <div onClick={this.toggleFullScreen} class="text-white px-2">
-              B
-            </div>
-            <div onClick={this.toogleClick} class="text-white px-2">
-              X
+          <div className="bg-black fixed right-0">
+            <div class=" grid grid-flow-col justify-end">
+              <div
+                onClick={(event) => this.minimizewin(3)}
+                class=" cursor-pointer text-white px-2"
+              >
+                --
+              </div>
+              <div onClick={this.toggleFullScreen} class="text-white px-2">
+                B
+              </div>
+              <div onClick={this.toogleClick} class="text-white px-2">
+                X
+              </div>
             </div>
           </div>
         </div>

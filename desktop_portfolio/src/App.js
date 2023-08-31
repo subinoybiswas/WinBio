@@ -51,13 +51,9 @@ function App() {
   };
 
   const windowClose = async (x) => {
-    console.log(x);
-    for (let i = 1; i <= 3; i++) {
-      if (i === x) {
-        functions[i + 0.3](0);
-        // await console.log(z);
-      }
-    }
+    // console.log(x);
+    functions[x + 0.3](0);
+    // await console.log(z);
   };
 
   //console.log("Type of functions: ", typeof functions);

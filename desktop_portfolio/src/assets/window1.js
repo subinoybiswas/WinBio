@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Rnd } from "react-rnd";
+import Iframe from "react-iframe-click";
 export class Window1 extends Component {
   state = {
     isFullScreen: false,
@@ -67,30 +68,32 @@ export class Window1 extends Component {
   render() {
     const Box = () => (
       <div class=" cursor-pointer mx-0 my-0 h-[95%] drop-shadow-lg bg-white">
-        <div class="bg-black grid grid-flow-col justify-between w-[100%] ">
+        <div class="bg-black grid grid-flow-col ">
           <div
-            class="text-white px-2"
             onClick={() => {
               this.divclick(1);
             }}
+            class="bg-black grid grid-flow-col justify-between w-[100%] "
           >
-            Internet
+            <div class="text-white px-2">Internet</div>
           </div>
-          <div class=" cursor-pointer grid grid-flow-col justify-end">
-            <div
-              onClick={(event) => this.minimizewin(1)}
-              class=" cursor-pointer text-white px-2"
-            >
-              --
-            </div>
-            <div onClick={this.toggleFullScreen} class="text-white px-2">
-              B
-            </div>
-            <div
-              onClick={this.toogleClick}
-              class=" cursor-pointer text-white px-2"
-            >
-              X
+          <div className="bg-black fixed right-0">
+            <div class=" cursor-pointer grid grid-flow-col justify-end">
+              <div
+                onClick={(event) => this.minimizewin(1)}
+                class=" cursor-pointer text-white px-2"
+              >
+                --
+              </div>
+              <div onClick={this.toggleFullScreen} class="text-white px-2">
+                B
+              </div>
+              <div
+                onClick={this.toogleClick}
+                class=" cursor-pointer text-white px-2"
+              >
+                X
+              </div>
             </div>
           </div>
         </div>
@@ -101,10 +104,14 @@ export class Window1 extends Component {
           className="body"
           class="bg-slate-100 h-[100%]"
         >
-          <iframe
+          <Iframe
             class="w-[100%] h-[100%]"
             src="https://oldgoogle.neocities.org/1998/"
-          ></iframe>
+            onInferredClick={() => {
+              this.divclick(1);
+            }}
+          ></Iframe>
+          ;
         </div>
       </div>
     );
@@ -125,7 +132,6 @@ export class Window1 extends Component {
         bounds="window"
         style={{ zIndex: this.props[1.2] }}
         // onDrag={this.divclick(1)}
-        
       >
         <Box />
       </Rnd>
