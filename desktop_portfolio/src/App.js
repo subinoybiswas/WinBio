@@ -7,6 +7,7 @@ import win from "./winlogo.png";
 import React, { useState } from "react";
 import bgimg from "./winbg.png";
 import { BrowserView, MobileView } from "react-device-detect"; //  isBrowser,isMobile also available
+import Clock from "react-live-clock";
 
 function App() {
   const [clicked, setClicked] = useState(false);
@@ -168,7 +169,7 @@ function App() {
                   class={
                     "border-t-2 border-s-2 bg-[#C0C0C0] my-[5px] mx-1  grid grid-flow-col content-center border-e-[3px] border-b-[3px]" +
                     (isActive
-                      ? "   border-t-black border-s-black   "
+                      ? "   border-t-black border-s-black  "
                       : "  border-white   border-e-black border-b-black")
                   }
                 >
@@ -227,7 +228,13 @@ function App() {
                   <></>
                 )}
               </div>
-              <div className="Time"></div>
+              <div className=" px-2 bg-white Time fixed right-2 border-t-2 border-s-2 my-[5px] mx-1  content-center border-e-[3px] border-b-[3px]">
+                <Clock
+                  format={"HH:mm"}
+                  ticking={true}
+                  timezone={"Asia/Kolkata"}
+                />
+              </div>
             </div>
           </div>
         </div>
