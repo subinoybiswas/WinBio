@@ -7,11 +7,31 @@ export class Window2 extends Component {
     isFullScreen: false,
     originalPosition: { x: 100, y: 100 }, // Set your initial position here
     originalSize: { width: 400, height: 300 },
+    directory: "C:\\",
   };
   commands = {
     whoami: "Subinoy",
-    cd: (directory) => `changed path to ${directory}`,
-    ls: "Hi",
+    cd: (dir) => {
+      if (dir !== "" && dir !== " " && dir !== undefined && dir !== null) {
+        this.setState({
+          directory: this.state.directory + dir + "\\",
+        });
+      }
+    },
+    "cd..": () => {
+      this.setState({
+        directory: "C:\\",
+      });
+    },
+    ls: () => {
+      return (
+        <div>
+          <li>Explorer.exe</li>
+          <li>cmd.exe</li>
+          <li>Resume.pdf</li>
+        </div>
+      );
+    },
   };
 
   theme = {
@@ -125,7 +145,7 @@ export class Window2 extends Component {
                 <br />
               </div>
             }
-            prompt={"C:\\>"}
+            prompt={this.state.directory + ">"}
             commands={this.commands}
             themes={this.theme}
             theme="mytheme"
