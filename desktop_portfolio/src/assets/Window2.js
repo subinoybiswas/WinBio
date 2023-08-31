@@ -34,7 +34,7 @@ export class Window2 extends Component {
       this.open(1, "1");
       return "Process Internet.exe has started";
     },
-    "exit":()=>{
+    exit: () => {
       this.toogleClick();
     },
     ls: () => {
@@ -76,6 +76,7 @@ export class Window2 extends Component {
 
   toggleFullScreen = () => {
     //console.log(this.props);
+    this.props.windowset(2);
     this.setState(
       (prevState) => ({
         isFullScreen: !prevState.isFullScreen,

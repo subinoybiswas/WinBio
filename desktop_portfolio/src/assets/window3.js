@@ -27,6 +27,7 @@ export class Window3 extends Component {
 
   toggleFullScreen = () => {
     //console.log(this.props);
+    this.props.windowset(3);
     this.setState(
       (prevState) => ({
         isFullScreen: !prevState.isFullScreen,
