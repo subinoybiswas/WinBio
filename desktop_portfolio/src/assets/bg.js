@@ -31,9 +31,7 @@ export class Bg extends Component {
             <img class="object-contain pl-1" src={DOSlogo} alt="Hi"></img>
             <p>MS-DOS</p>
           </div>
-        </div>
-
-        <div class=" text-center absolute right-0 mx-2.5 grid grid-flow-row  ">
+          
           <div
             onDoubleClick={(event) => this.toogleClick(3, "3")}
             class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 "
@@ -47,6 +45,8 @@ export class Bg extends Component {
             <p>Home</p>
           </div>
         </div>
+
+        <div class=" text-center absolute right-0 mx-2.5 grid grid-flow-row  "></div>
       </div>
     );
   }
