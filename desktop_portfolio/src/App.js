@@ -150,13 +150,24 @@ function App() {
           )}
 
           {isActive ? (
-            <div class=" fixed h-[400px] w-[250px] bg-black left-0 bottom-10 z-[100]">
-              <div class=" bg-emerald-300 h-[60vh] w-[35px] ">
-                <div class="  fixed text-black bg-zinc-50 w-[200px] h-[35px] ml-1 -left-[90px] bottom-[19%] -rotate-90">
+            <div class=" absolute h-[400px] w-[250px] bg-white left-0 bottom-10 z-[100]">
+              <div class="grid grid-cols-6 ">
+                <div class=" bg-emerald-300">
+                  {/* <div class="  fixed text-black bg-zinc-50 w-[200px] h-[35px] ml-1 -left-[90px] bottom-[19%] -rotate-90">
                   Windows Me
+                </div> */}
+                <li>A</li>
+                <li>b</li>
+                <li>v</li>
+                <li>d</li>
+                </div>
+                <div class="bg-black col-span-5">
+                <li>A</li>
+                <li>b</li>
+                <li>v</li>
+                <li>d</li>
                 </div>
               </div>
-              Hi
             </div>
           ) : (
             <></>
