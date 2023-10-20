@@ -73,11 +73,13 @@ function App() {
     //console.log(Window2);
     functions[x + 0.1](false);
     windowClose(x);
+    
   };
 
   const maximize = (x) => {
     functions[x + 0.1](true);
     windowSet(x);
+   
   };
 
   const openwin1 = (x) => {
@@ -203,7 +205,7 @@ function App() {
                   <div
                     class={
                       " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
-                      (z === 10
+                      (functions[1]
                         ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
                         : "  border-e-black border-b-black")
                     }
@@ -218,7 +220,7 @@ function App() {
                   <div
                     class={
                       " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
-                      (z2 === 10
+                      (functions[2]
                         ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
                         : "  border-e-black border-b-black")
                     }
@@ -233,7 +235,7 @@ function App() {
                   <div
                     class={
                       " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
-                      (z3 === 10
+                      (functions[3]
                         ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
                         : "  border-e-black border-b-black")
                     }
