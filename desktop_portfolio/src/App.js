@@ -13,6 +13,9 @@ function App() {
   const [clicked, setClicked] = useState(false);
   const [clicked2, setClicked2] = useState(false);
   const [clicked3, setClicked3] = useState(false);
+  const [c, setc] = useState(false);
+  const [c2, setc2] = useState(false);
+  const [c3, setc3] = useState(false);
   const [z, setz] = useState(1);
   const [z2, setz2] = useState(2);
   const [z3, setz3] = useState(3);
@@ -28,16 +31,22 @@ function App() {
     1.2: z,
     1.3: setz,
     1.4: seto,
+    1.5: c,
+    1.6: setc,
     2: clicked2,
     2.1: setClicked2,
     2.2: z2,
     2.3: setz2,
     2.4: seto2,
+    2.5: c2,
+    2.6: setc2,
     3: clicked3,
     3.1: setClicked3,
     3.2: z3,
     3.3: setz3,
     3.4: seto3,
+    3.5: c3,
+    3.6: setc3,
   };
 
   const windowSet = async (x) => {
@@ -46,8 +55,10 @@ function App() {
       if (i === x) {
         functions[i + 0.3](10);
         // await console.log(z);
+        functions[i + 0.6](true);
       } else {
         functions[i + 0.3](i);
+        functions[i + 0.6](false);
       }
     }
   };
@@ -73,13 +84,11 @@ function App() {
     //console.log(Window2);
     functions[x + 0.1](false);
     windowClose(x);
-    
   };
 
   const maximize = (x) => {
     functions[x + 0.1](true);
     windowSet(x);
-   
   };
 
   const openwin1 = (x) => {
@@ -161,19 +170,36 @@ function App() {
                 </div>
                 <div class="bg-black col-span-5 grid grid-flow-row auto-rows-max">
                   {/* <div class="bg-blue-400 row-[span_16_/_span_16]">Hi</div> */}
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">Hi</div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">Hi</div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">Hi</div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">Hi</div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">Hi</div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">Hi</div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">Hi</div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">Hi</div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">Hi</div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">Hi</div>
-            
-      
-                 
+                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
+                    Hi
+                  </div>
+                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
+                    Hi
+                  </div>
+                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
+                    Hi
+                  </div>
+                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
+                    Hi
+                  </div>
+                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
+                    Hi
+                  </div>
+                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
+                    Hi
+                  </div>
+                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
+                    Hi
+                  </div>
+                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
+                    Hi
+                  </div>
+                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
+                    Hi
+                  </div>
+                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
+                    Hi
+                  </div>
                 </div>
               </div>
             </div>
@@ -205,7 +231,7 @@ function App() {
                   <div
                     class={
                       " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
-                      (functions[1]
+                      (functions[1.5]
                         ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
                         : "  border-e-black border-b-black")
                     }
@@ -220,7 +246,7 @@ function App() {
                   <div
                     class={
                       " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
-                      (functions[2]
+                      (functions[2.5]
                         ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
                         : "  border-e-black border-b-black")
                     }
@@ -235,7 +261,7 @@ function App() {
                   <div
                     class={
                       " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
-                      (functions[3]
+                      (functions[3.5]
                         ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
                         : "  border-e-black border-b-black")
                     }
