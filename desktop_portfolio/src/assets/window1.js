@@ -68,30 +68,35 @@ export class Window1 extends Component {
   render() {
     const Box = () => (
       <div class=" cursor-pointer mx-0 my-0 h-[95%] drop-shadow-lg bg-white">
-        <div class="bg-black grid grid-flow-col ">
+        <div
+          class="grid grid-flow-col bg-[#0000ad] py-1 px-1  border-[3px] border-slate-100 "
+          onClick={() => {
+            this.divclick(1);
+          }}
+        >
           <div
             onClick={() => {
               this.divclick(1);
             }}
-            class="bg-black grid grid-flow-col justify-between w-[100%] "
+            class=" grid grid-flow-col justify-between w-[70%] "
           >
-            <div class="text-white px-2">Internet</div>
+            <div class="text-white px-1 text-xl">Internet</div>
           </div>
-          <div className="bg-black fixed right-0">
-            <div class=" cursor-pointer grid grid-flow-col justify-end">
+          <div className="fixed right-0">
+            <div class=" grid grid-flow-col justify-end">
               <div
                 onClick={(event) => this.minimizewin(1)}
                 class=" cursor-pointer text-white px-2"
               >
                 --
               </div>
-              <div onClick={this.toggleFullScreen} class="text-white px-2">
+              <div
+                onClick={this.toggleFullScreen}
+                class="text-white px-2 bg-[#c0c0c0]"
+              >
                 B
               </div>
-              <div
-                onClick={this.toogleClick}
-                class=" cursor-pointer text-white px-2"
-              >
+              <div onClick={this.toogleClick} class="text-white px-2">
                 X
               </div>
             </div>
