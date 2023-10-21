@@ -125,7 +125,7 @@ export class Window2 extends Component {
     const Box = () => (
       <div class=" cursor-pointer mx-0 my-0 h-[90%] drop-shadow-lg bg-white">
         <div
-          class="grid grid-flow-col bg-[#0000ad] py-1 px-1  border-[2px] border-slate-100 "
+          class="grid grid-flow-col bg-[#000080] py-1 px-1  border-[2px] border-slate-100 "
           onClick={() => {
             this.divclick(2);
           }}

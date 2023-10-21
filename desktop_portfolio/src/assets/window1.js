@@ -69,55 +69,47 @@ export class Window1 extends Component {
     const Box = () => (
       <div class=" cursor-pointer mx-0 my-0 h-[90%] drop-shadow-lg bg-white">
         <div
-          class="grid grid-flow-col bg-[#0000ad] py-1 px-1  border-[2px] border-slate-100 "
+          class="grid grid-flow-col bg-[#000080] py-1 px-1  border-[2px] border-slate-100 "
           onClick={() => {
             this.divclick(1);
           }}
         >
-          <div class="h-[100%]">
-            <div class="text-white px-1 text-l float-left">
-              <div>
-                <strong>Internet</strong>
-              </div>
+          <div class="grid grid-flow-col">
+            <div class="text-white text-xl/[22px] pl-1 self-start  mr-0.5 ">
+              <strong>Internet</strong>
             </div>
           </div>
 
-          <div className="">
-            <div class=" grid grid-flow-col justify-end mr-0.5">
-              <div
-                onClick={(event) => this.minimizewin(1)}
-                class=" cursor-pointer text-white "
-              >
-                <div
-                  class="px-2 h-[20px] w-[20px] ml-0.5 float-right  bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
-                  style={{
-                    borderLeftColor: "#fff",
-                    borderTopColor: "#fff",
-                    border: "2px solid #7c7c7c",
-                  }}
-                ></div>
-              </div>
-              <div onClick={this.toggleFullScreen} class="text-white ">
-                <div
-                  class="px-2 h-[20px] w-[20px] ml-0.5 float-right  bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
-                  style={{
-                    borderLeftColor: "#fff",
-                    borderTopColor: "#fff",
-                    border: "2px solid #7c7c7c",
-                  }}
-                ></div>
-              </div>
-              <div onClick={this.toogleClick} class="text-white ">
-                <div
-                  class="px-2 h-[20px] w-[20px] ml-0.5 float-right  bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
-                  style={{
-                    borderLeftColor: "#fff",
-                    borderTopColor: "#fff",
-                    border: "2px solid #7c7c7c",
-                  }}
-                ></div>
-              </div>
-            </div>
+          <div class=" grid grid-flow-col justify-end mr-0.5 self-center h-[20px]">
+            <div
+              onClick={(event) => this.minimizewin(1)}
+              class="px-2  ml-0.5  bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
+              style={{
+                borderLeftColor: "#fff",
+                borderTopColor: "#fff",
+                border: "2px solid #7c7c7c",
+              }}
+            ></div>
+
+            <div
+              onClick={this.toggleFullScreen}
+              class="px-2 ml-0.5   bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
+              style={{
+                borderLeftColor: "#fff",
+                borderTopColor: "#fff",
+                border: "2px solid #7c7c7c",
+              }}
+            ></div>
+
+            <div
+              onClick={this.toogleClick}
+              class="px-2  ml-0.5   bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
+              style={{
+                borderLeftColor: "#fff",
+                borderTopColor: "#fff",
+                border: "2px solid #7c7c7c",
+              }}
+            ></div>
           </div>
         </div>
         <div
