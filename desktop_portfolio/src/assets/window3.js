@@ -68,39 +68,55 @@ export class Window3 extends Component {
 
   render() {
     const Box = () => (
-      <div
-        class={`cursor-pointer h-[90%] drop-shadow-lg bg-white`}
-      >
+      <div class={`cursor-pointer h-[90%] drop-shadow-lg bg-white`}>
         <div
-          class="grid grid-flow-col bg-[#0000ad] py-1 px-1  border-[3px] border-slate-100 "
+          class="grid grid-flow-col bg-[#0000ad] py-1 px-1  border-[2px] border-slate-100 "
           onClick={() => {
             this.divclick(3);
           }}
         >
-          <div
-            onClick={() => {
-              this.divclick(3);
-            }}
-            class=" grid grid-flow-col justify-between w-[70%] "
-          >
-            <div class="text-white text-xl px-1">Resume</div>
+          <div class="h-[100%]">
+            <div class="text-white px-1 text-l float-left">
+              <div>
+                <strong>Resume</strong>
+              </div>
+            </div>
           </div>
-          <div className="fixed right-0">
-            <div class=" grid grid-flow-col justify-end">
+
+          <div className="">
+            <div class=" grid grid-flow-col justify-end mr-0.5">
               <div
                 onClick={(event) => this.minimizewin(3)}
-                class=" cursor-pointer text-white px-2"
+                class=" cursor-pointer text-white "
               >
-                --
+                <div
+                  class="px-2 h-[20px] w-[20px] ml-0.5 float-right  bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
+                  style={{
+                    borderLeftColor: "#fff",
+                    borderTopColor: "#fff",
+                    border: "2px solid #7c7c7c",
+                  }}
+                ></div>
               </div>
-              <div
-                onClick={this.toggleFullScreen}
-                class="text-white px-2 bg-[#c0c0c0]"
-              >
-                B
+              <div onClick={this.toggleFullScreen} class="text-white ">
+                <div
+                  class="px-2 h-[20px] w-[20px] ml-0.5 float-right  bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
+                  style={{
+                    borderLeftColor: "#fff",
+                    borderTopColor: "#fff",
+                    border: "2px solid #7c7c7c",
+                  }}
+                ></div>
               </div>
-              <div onClick={this.toogleClick} class="text-white px-2">
-                X
+              <div onClick={this.toogleClick} class="text-white ">
+                <div
+                  class="px-2 h-[20px] w-[20px] ml-0.5 float-right  bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
+                  style={{
+                    borderLeftColor: "#fff",
+                    borderTopColor: "#fff",
+                    border: "2px solid #7c7c7c",
+                  }}
+                ></div>
               </div>
             </div>
           </div>
