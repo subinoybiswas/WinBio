@@ -129,6 +129,9 @@ export class Window2 extends Component {
           onClick={() => {
             this.divclick(2);
           }}
+          onDrag={() => {
+            this.divclick(2);
+          }}
         >
           <div
             onClick={() => {
