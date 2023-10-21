@@ -74,14 +74,16 @@ export class Window1 extends Component {
             this.divclick(1);
           }}
         >
-          <div class="text-white px-1 text-[20px] float-left">
-            <div>
-              <strong>Internet</strong>
+          <div class="h-[100%]">
+            <div class="text-white px-1 text-l float-left">
+              <div>
+                <strong>Internet</strong>
+              </div>
             </div>
           </div>
 
-          <div className="fixed right-0">
-            <div class=" grid grid-flow-col justify-end mr-2">
+          <div className="">
+            <div class=" grid grid-flow-col justify-end mr-0.5">
               <div
                 onClick={(event) => this.minimizewin(1)}
                 class=" cursor-pointer text-white "
