@@ -75,50 +75,42 @@ export class Window3 extends Component {
             this.divclick(3);
           }}
         >
-          <div class="h-[100%]">
-            <div class="text-white px-1 text-l float-left">
-              <div>
-                <strong>Resume</strong>
-              </div>
+          <div class="grid grid-flow-col">
+            <div class="text-white text-xl/[22px] pl-1 self-start  mr-0.5 ">
+              <strong>Resume</strong>
             </div>
           </div>
 
-          <div className="">
-            <div class=" grid grid-flow-col justify-end mr-0.5">
-              <div
-                onClick={(event) => this.minimizewin(3)}
-                class=" cursor-pointer text-white "
-              >
-                <div
-                  class="px-2 h-[20px] w-[20px] ml-0.5 float-right  bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
-                  style={{
-                    borderLeftColor: "#fff",
-                    borderTopColor: "#fff",
-                    border: "2px solid #7c7c7c",
-                  }}
-                ></div>
-              </div>
-              <div onClick={this.toggleFullScreen} class="text-white ">
-                <div
-                  class="px-2 h-[20px] w-[20px] ml-0.5 float-right  bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
-                  style={{
-                    borderLeftColor: "#fff",
-                    borderTopColor: "#fff",
-                    border: "2px solid #7c7c7c",
-                  }}
-                ></div>
-              </div>
-              <div onClick={this.toogleClick} class="text-white ">
-                <div
-                  class="px-2 h-[20px] w-[20px] ml-0.5 float-right  bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
-                  style={{
-                    borderLeftColor: "#fff",
-                    borderTopColor: "#fff",
-                    border: "2px solid #7c7c7c",
-                  }}
-                ></div>
-              </div>
-            </div>
+          <div class=" grid grid-flow-col justify-end mr-0.5 self-center h-[20px]">
+            <div
+              onClick={(event) => this.minimizewin(3)}
+              class="px-2  ml-0.5  bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
+              style={{
+                borderLeftColor: "#fff",
+                borderTopColor: "#fff",
+                border: "2px solid #7c7c7c",
+              }}
+            ></div>
+
+            <div
+              onClick={this.toggleFullScreen}
+              class="px-2 ml-0.5   bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
+              style={{
+                borderLeftColor: "#fff",
+                borderTopColor: "#fff",
+                border: "2px solid #7c7c7c",
+              }}
+            ></div>
+
+            <div
+              onClick={this.toogleClick}
+              class="px-2  ml-0.5   bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
+              style={{
+                borderLeftColor: "#fff",
+                borderTopColor: "#fff",
+                border: "2px solid #7c7c7c",
+              }}
+            ></div>
           </div>
         </div>
         <div
