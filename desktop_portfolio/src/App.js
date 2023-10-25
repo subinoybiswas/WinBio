@@ -66,6 +66,7 @@ function App() {
   const windowClose = async (x) => {
     // console.log(x);
     functions[x + 0.3](0);
+    functions[x + 0.6](false);
     // await console.log(z);
   };
 

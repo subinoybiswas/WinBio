@@ -20,6 +20,10 @@ export class Window1 extends Component {
       this.props.handleToggleClick(1);
     }
   };
+  handleButtonClick = (event) => {
+    event.stopPropagation();
+    this.props.Minimize(1);
+  };
 
   minimizewin = (x) => {
     this.props.Minimize(x);
@@ -82,7 +86,7 @@ export class Window1 extends Component {
 
           <div class=" grid grid-flow-col justify-end mr-0.5 self-center h-[20px]">
             <div
-              onClick={(event) => this.minimizewin(1)}
+              onClick={this.handleButtonClick}
               class="px-2  ml-0.5  bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
               style={{
                 borderLeftColor: "#fff",

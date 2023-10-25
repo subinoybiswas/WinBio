@@ -79,6 +79,10 @@ export class Window2 extends Component {
   minimizewin = (x) => {
     this.props.Minimize(x);
   };
+  handleButtonClick = (event) => {
+    event.stopPropagation();
+    this.props.Minimize(2);
+  };
 
   toggleFullScreen = () => {
     //console.log(this.props);
@@ -141,7 +145,7 @@ export class Window2 extends Component {
 
           <div class=" grid grid-flow-col justify-end mr-0.5 self-center h-[20px]">
             <div
-              onClick={(event) => this.minimizewin(2)}
+              onClick={this.handleButtonClick}
               class="px-2  ml-0.5  bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
               style={{
                 borderLeftColor: "#fff",
