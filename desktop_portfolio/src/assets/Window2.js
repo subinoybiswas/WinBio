@@ -126,6 +126,10 @@ export class Window2 extends Component {
               </div>
               <br></br>
               <div>
+                <b>clear:</b> Clears everything in the current session.
+              </div>
+              <br></br>
+              <div>
                 <b>help:</b> Get help and information about available commands
                 in the command-line environment.
               </div>
