@@ -72,7 +72,7 @@ export class Window3 extends Component {
 
   render() {
     const Box = () => (
-      <div class={`cursor-pointer h-[90%] drop-shadow-lg bg-white`}>
+      <div class={`cursor-pointer h-[94%] drop-shadow-lg bg-white`}>
         <div
           class="grid grid-flow-col bg-[#000080] py-1 px-1  border-[2px] border-slate-100 "
           onClick={() => {
