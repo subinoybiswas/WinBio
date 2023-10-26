@@ -70,6 +70,7 @@ function App() {
     // await console.log(z);
   };
 
+
   //console.log("Type of functions: ", typeof functions);
   const handleToggleClick = async (x) => {
     //console.log("hi");

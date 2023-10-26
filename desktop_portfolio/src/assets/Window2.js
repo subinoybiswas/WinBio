@@ -16,6 +16,10 @@ export class Window2 extends Component {
       this.props.windowset(parseInt(y));
     }
   };
+  getCurrentTime() {
+    const date = new Date();
+    return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+  }
   commands = {
     whoami: "Subinoy",
     cd: (dir) => {
@@ -38,19 +42,42 @@ export class Window2 extends Component {
       this.open(3, "3");
       return "Opened Resume.pdf";
     },
+    pwd: () => {
+      return "Path: \n" + this.state.directory;
+    },
     exit: () => {
       this.toogleClick();
+    },
+    dir: () => {
+      if (this.state.directory === "C:\\") {
+        return (
+          <div class="list-none">
+            <br></br>
+            <div> Current Directory: {this.state.directory}</div>
+            <br></br>
+            <li>26-10-2023 ------ Internet.exe</li>
+            <li>26-10-2023 ------ MS-DOS.exe</li>
+            <li>26-10-2023 ------ Resume.pdf</li>
+          </div>
+        );
+      }
     },
     ls: () => {
       if (this.state.directory === "C:\\") {
         return (
-          <div>
-            <li>Internet.exe</li>
-            <li>MS-DOS.exe</li>
-            <li>Resume.pdf</li>
+          <div class="list-none">
+            <br></br>
+            <div> Current Directory: {this.state.directory}</div>
+            <br></br>
+            <li>26-10-2023 ------ Internet.exe</li>
+            <li>26-10-2023 ------ MS-DOS.exe</li>
+            <li>26-10-2023 ------ Resume.pdf</li>
           </div>
         );
       }
+    },
+    time: () => {
+      return "The time is: " + this.getCurrentTime();
     },
   };
 
