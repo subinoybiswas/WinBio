@@ -21,7 +21,7 @@ export class Window2 extends Component {
     return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
   }
   commands = {
-    whoami: "Subinoy",
+    whoami: "Subinoy Biswas",
     cd: (dir) => {
       if (dir !== "" && dir !== " " && dir !== undefined && dir !== null) {
         this.setState({
@@ -78,6 +78,62 @@ export class Window2 extends Component {
     },
     time: () => {
       return "The time is: " + this.getCurrentTime();
+    },
+    help: () => {
+      return (
+        <div class="list-none">
+          <br></br>
+          <div>
+            <strong>Available Commands:</strong>
+          </div>
+          <br></br>
+          <div>
+            <div>
+              <div>
+                <b>whoami:</b> Displays the username of the currently logged-in
+                user.
+              </div>
+              <br></br>
+              <div>
+                <b>cd:</b> Change directory. Used to navigate to a different
+                directory in the file system.
+              </div>
+              <br></br>
+              <div>
+                <b>cd..:</b> Move up one directory level. This command is used
+                to go to the parent directory.
+              </div>
+              <br></br>
+              <div>
+                <b>pwd:</b> Print working directory. It shows the current
+                directory path where you are located in the file system.
+              </div>
+              <br></br>
+              <div>
+                <b>exit:</b> Exit the current session.
+              </div>
+              <br></br>
+              <div>
+                <b>dir:</b> List files and directories in the current directory.
+              </div>
+              <br></br>
+              <div>
+                <b>ls:</b> List files and directories in the current directory.
+              </div>
+              <br></br>
+              <div>
+                <b>time:</b> Display the current time.
+              </div>
+              <br></br>
+              <div>
+                <b>help:</b> Get help and information about available commands
+                in the command-line environment.
+              </div>
+              <br></br>
+            </div>
+          </div>
+        </div>
+      );
     },
   };
 
