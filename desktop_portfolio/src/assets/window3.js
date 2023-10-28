@@ -138,8 +138,8 @@ export class Window3 extends Component {
         default={{
           x: 270,
           y: 120,
-          width: 500,
-          height: 390,
+          width: 700,
+          height: 490,
         }}
         minWidth={210}
         minHeight={195}
