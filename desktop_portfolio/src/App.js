@@ -3,6 +3,9 @@ import { Bg } from "./assets/bg";
 import { Window1 } from "./assets/window1";
 import { Window2 } from "./assets/Window2";
 import { Window3 } from "./assets/window3";
+import ReactLogo from "./logo.svg";
+import IELogo from "./ie.ico";
+import DOSlogo from "./msdoslogo.png";
 import win from "./winlogo.png";
 import React, { useState } from "react";
 import bgimg from "./winbg.png";
@@ -69,7 +72,6 @@ function App() {
     functions[x + 0.6](false);
     // await console.log(z);
   };
-
 
   //console.log("Type of functions: ", typeof functions);
   const handleToggleClick = async (x) => {
@@ -232,14 +234,24 @@ function App() {
                 {o !== 0 ? (
                   <div
                     class={
-                      " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
+                      " my-[5px] mx-[5px] px-2 border-t-2 border-s-2 min-w-[100px] border-e-[3px] border-b-[3px]" +
                       (functions[1.5]
                         ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
                         : "  border-e-black border-b-black")
                     }
                     onClick={() => maximize(1)}
                   >
-                    Internet
+                    <div class="static">
+                      <img
+                        class="h-[20px] w-[20px] inline-block"
+                        src={IELogo}
+                        alt="Hi"
+                      ></img>
+                      <div class="inline-block ml-[5px] text-[18px]/[20px] ">
+                        {" "}
+                        <strong>Internet</strong>
+                      </div>
+                    </div>
                   </div>
                 ) : (
                   <></>
@@ -247,14 +259,24 @@ function App() {
                 {o2 !== 0 ? (
                   <div
                     class={
-                      " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
+                      " my-[5px] mx-[5px] border-t-2 border-s-2 min-w-[100px] border-e-[3px] border-b-[3px]" +
                       (functions[2.5]
                         ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
                         : "  border-e-black border-b-black")
                     }
                     onClick={() => maximize(2)}
                   >
-                    MS-DOS
+                    <div class="static ml-[5px]">
+                      <img
+                        class="h-[17.5px] w-[17.5px] inline-block"
+                        src={DOSlogo}
+                        alt="Hi"
+                      ></img>
+                      <div class="inline-block ml-[5px] text-[18px]/[20px] ">
+                        {" "}
+                        <strong>MS-DOS</strong>
+                      </div>
+                    </div>
                   </div>
                 ) : (
                   <></>
@@ -262,14 +284,24 @@ function App() {
                 {o3 !== 0 ? (
                   <div
                     class={
-                      " my-[5px] mx-[5px] border-t-2 border-s-2 w-[100px] border-e-[3px] border-b-[3px]" +
+                      " my-[5px] mx-[5px] border-t-2 border-s-2 min-w-[100px] border-e-[3px] border-b-[3px]" +
                       (functions[3.5]
                         ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
                         : "  border-e-black border-b-black")
                     }
                     onClick={() => maximize(3)}
                   >
-                    APP3
+                    <div class="static ml-[5px]">
+                      <img
+                        class="h-[20px] w-[20px] inline-block"
+                        src={ReactLogo}
+                        alt="Hi"
+                      ></img>
+                      <div class="inline-block ml-[5px] text-[18px]/[20px] ">
+                        {" "}
+                        <strong>Resume</strong>
+                      </div>
+                    </div>
                   </div>
                 ) : (
                   <></>
