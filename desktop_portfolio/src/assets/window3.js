@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Rnd } from "react-rnd";
+import Bio from "./bio";
 export class Window3 extends Component {
   state = {
     isFullScreen: false,
@@ -124,7 +125,7 @@ export class Window3 extends Component {
           className="body"
           class="bg-slate-100 h-[100%] text-black"
         >
-          hi
+          <Bio />
         </div>
       </div>
     );
