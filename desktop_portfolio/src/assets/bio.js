@@ -42,7 +42,10 @@ function Bio() {
           💫 About Me 💫
         </h1>
         <div>
-          <p className="mb-4 text-center font-sans">
+          <p
+            className="mb-4 text-center font-sans"
+            style={{ fontFamily: "MS Sans Serif" }}
+          >
             <li>🔭 Currently pursuing BTech CSE</li>
             <li>🌱 Nodejs Developer </li>
             <li>
@@ -56,7 +59,10 @@ function Bio() {
               </a>
             </li>
             <li>
-              🔍 Freelance Technical Writer <br />⏰ Winner of
+              🔍 Freelance Technical Writer <br />
+            </li>
+            <li>
+              ⏰ Winner of &nbsp;
               <a
                 href="https://devfolio.co/statuscode0/dashboard"
                 target="_blank"
