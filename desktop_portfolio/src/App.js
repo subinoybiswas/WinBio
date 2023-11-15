@@ -4,6 +4,7 @@ import { Window1 } from "./assets/window1";
 import { Window2 } from "./assets/Window2";
 import { Window3 } from "./assets/window3";
 import ReactLogo from "./logo.svg";
+import FolderLogo from "./folder.png";
 import IELogo from "./ie.ico";
 import DOSlogo from "./msdoslogo.png";
 import win from "./winlogo.png";
@@ -294,7 +295,7 @@ function App() {
                     <div class="static ml-[5px]">
                       <img
                         class="h-[20px] w-[20px] inline-block"
-                        src={ReactLogo}
+                        src={FolderLogo}
                         alt="Hi"
                       ></img>
                       <div class="inline-block ml-[5px] text-[18px]/[20px] ">
