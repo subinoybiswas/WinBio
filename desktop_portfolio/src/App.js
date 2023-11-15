@@ -59,6 +59,7 @@ function App() {
     for (let i = 1; i <= 3; i++) {
       if (i === x) {
         functions[i + 0.3](10);
+
         // await console.log(z);
         functions[i + 0.6](true);
       } else {
@@ -114,7 +115,12 @@ function App() {
       setIsActive(false);
     }
   };
-  const [taskbarItems, setTaskbarItems] = useState([""]);
+  const dataArray = [
+    { id: 1, logo: IELogo, on: o, name: "Internet" },
+    { id: 2, logo: DOSlogo, on: o2, name: "MS-DOS" },
+    { id: 3, logo: FolderLogo, on: o3, name: "Resume" },
+    // Add more data items as needed
+  ];
 
   return (
     <div>
@@ -234,61 +240,51 @@ function App() {
                 </div>
               </div>
               <div className="  grid grid-flow-col  h-[28px] items-center">
-                {o !== 0 ? (
-                  <div
-                    class={
-                      " my-[5px] mx-[5px] px-2 border-t-2 border-s-2 min-w-[100px] border-e-[3px] border-b-[3px]" +
-                      (functions[1.5]
-                        ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
-                        : "  border-e-black border-b-black")
-                    }
-                    onClick={() => maximize(1)}
-                  >
-                    <div class="static">
-                      <img
-                        class="h-[20px] w-[20px] inline-block"
-                        src={IELogo}
-                        alt="Hi"
-                      ></img>
-                      <div class="inline-block ml-[5px] text-[18px]/[20px] ">
-                        {" "}
-                        <strong>Internet</strong>
-                      </div>
-                    </div>
-                  </div>
+                {dataArray.map((item) =>
+                  // Conditionally render based on the value of the 'o' prop
+                  item.on !== 0 ? (
+                    <Task
+                      functions={functions}
+                      Logo={item.logo}
+                      no={item.id}
+                      maximize={maximize}
+                      name={item.name}
+                    />
+                  ) : null
+                )}
+                {/* {o !== 0 ? (
+                  <Task
+                    functions={functions}
+                    Logo={IELogo}
+                    no={1}
+                    maximize={maximize}
+                    name={"Internet"}
+                  />
                 ) : (
                   <></>
                 )}
                 {o2 !== 0 ? (
-                  <Task functions={functions} Logo={DOSlogo} no={2}/>
+                  <Task
+                    functions={functions}
+                    Logo={DOSlogo}
+                    no={2}
+                    maximize={maximize}
+                    name={"MS-DOS"}
+                  />
                 ) : (
                   <></>
                 )}
                 {o3 !== 0 ? (
-                  <div
-                    class={
-                      " my-[5px] mx-[5px] border-t-2 border-s-2 min-w-[100px] border-e-[3px] border-b-[3px]" +
-                      (functions[3.5]
-                        ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
-                        : "  border-e-black border-b-black")
-                    }
-                    onClick={() => maximize(3)}
-                  >
-                    <div class="static ml-[5px]">
-                      <img
-                        class="h-[20px] w-[20px] inline-block"
-                        src={FolderLogo}
-                        alt="Hi"
-                      ></img>
-                      <div class="inline-block ml-[5px] text-[18px]/[20px] ">
-                        {" "}
-                        <strong>Resume</strong>
-                      </div>
-                    </div>
-                  </div>
+                  <Task
+                    functions={functions}
+                    Logo={FolderLogo}
+                    no={3}
+                    maximize={maximize}
+                    name={"Resume"}
+                  />
                 ) : (
                   <></>
-                )}
+                )} */}
               </div>
               <div className=" px-2 bg-white Time fixed right-2 border-t-2 border-s-2 my-[5px] mx-1  content-center border-e-[3px] border-b-[3px]">
                 <Clock

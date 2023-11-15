@@ -1,17 +1,16 @@
 import React from "react";
 
-const Task = ({ functions, Logo,no }) => {
-  const maximize = (value) => {
-    // Implement your maximize function logic here
-    console.log(`Maximizing with value: ${value}`);
-  };
-
+const Task = ({ functions, Logo, no, maximize, name }) => {
+  console.log(functions[no + 0.5]);
+  if (!functions) {
+    console.log("functions Undefined"); // or render some default content
+  }
   return (
     <div
       className={
         "my-[5px] mx-[5px] border-t-2 border-s-2 min-w-[100px] border-e-[3px] border-b-[3px]" +
-        (functions[2.5]
-          ? " border-t-black border-s-black border-e-white border-black bg-slate-50"
+        (functions[no + 0.5]
+          ? " border-t-black border-s-black border-e-white bg-slate-50"
           : " border-e-black border-b-black")
       }
       onClick={() => maximize(no)}
@@ -23,7 +22,7 @@ const Task = ({ functions, Logo,no }) => {
           alt="Hi"
         ></img>
         <div className="inline-block ml-[5px] text-[18px]/[20px] ">
-          <strong>MS-DOS</strong>
+          <strong>{name}</strong>
         </div>
       </div>
     </div>
