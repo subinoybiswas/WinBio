@@ -4,10 +4,12 @@ import { Window1 } from "./assets/window1";
 import { Window2 } from "./assets/Window2";
 import { Window3 } from "./assets/window3";
 import ReactLogo from "./logo.svg";
+import Task from "./taskbaritem";
+import FolderLogo from "./folder.png";
 import IELogo from "./ie.ico";
 import DOSlogo from "./msdoslogo.png";
 import win from "./winlogo.png";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import bgimg from "./winbg.png";
 import { BrowserView, MobileView } from "react-device-detect"; //  isBrowser,isMobile also available
 import Clock from "react-live-clock";
@@ -27,7 +29,32 @@ function App() {
   const [o3, seto3] = useState(0);
 
   //console.log(clicked);
+  const [dataArray, setDataArray] = useState([]);
 
+  const taskArray = [
+    { id: 1, logo: IELogo, name: "Internet" },
+    { id: 2, logo: DOSlogo, name: "MS-DOS" },
+    { id: 3, logo: FolderLogo, name: "Resume" },
+  ];
+
+  const addToDataArray = (id) => {
+    const task = taskArray.find((item) => item.id === id);
+
+    if (task) {
+      setDataArray((prevDataArray) => [...prevDataArray, task]);
+    }
+    console.log(dataArray);
+  };
+
+  const deleteFromDataArray = (id) => {
+    setDataArray((prevDataArray) =>
+      prevDataArray.filter((item) => item.id !== id)
+    );
+  };
+  useEffect(() => {
+    // This block will execute each time dataArray gets updated
+    console.log("dataArray updated:", dataArray);
+  }, [dataArray]);
   var functions = {
     1: clicked,
     1.1: setClicked,
@@ -52,11 +79,12 @@ function App() {
     3.6: setc3,
   };
 
-  const windowSet = async (x) => {
+  const windowSet = (x) => {
     // console.log(typeof x);
     for (let i = 1; i <= 3; i++) {
       if (i === x) {
         functions[i + 0.3](10);
+
         // await console.log(z);
         functions[i + 0.6](true);
       } else {
@@ -66,15 +94,16 @@ function App() {
     }
   };
 
-  const windowClose = async (x) => {
+  const windowClose = (x) => {
     // console.log(x);
     functions[x + 0.3](0);
     functions[x + 0.6](false);
+    deleteFromDataArray(x);
     // await console.log(z);
   };
 
   //console.log("Type of functions: ", typeof functions);
-  const handleToggleClick = async (x) => {
+  const handleToggleClick = (x) => {
     //console.log("hi");
     //console.log(Window2);
     functions[x + 0.1](false);
@@ -98,6 +127,8 @@ function App() {
   const openwin1 = (x) => {
     functions[x + 0.1](true);
     functions[x + 0.4](1);
+
+    addToDataArray(x);
   };
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
@@ -231,81 +262,17 @@ function App() {
                 </div>
               </div>
               <div className="  grid grid-flow-col  h-[28px] items-center">
-                {o !== 0 ? (
-                  <div
-                    class={
-                      " my-[5px] mx-[5px] px-2 border-t-2 border-s-2 min-w-[100px] border-e-[3px] border-b-[3px]" +
-                      (functions[1.5]
-                        ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
-                        : "  border-e-black border-b-black")
-                    }
-                    onClick={() => maximize(1)}
-                  >
-                    <div class="static">
-                      <img
-                        class="h-[20px] w-[20px] inline-block"
-                        src={IELogo}
-                        alt="Hi"
-                      ></img>
-                      <div class="inline-block ml-[5px] text-[18px]/[20px] ">
-                        {" "}
-                        <strong>Internet</strong>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <></>
-                )}
-                {o2 !== 0 ? (
-                  <div
-                    class={
-                      " my-[5px] mx-[5px] border-t-2 border-s-2 min-w-[100px] border-e-[3px] border-b-[3px]" +
-                      (functions[2.5]
-                        ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
-                        : "  border-e-black border-b-black")
-                    }
-                    onClick={() => maximize(2)}
-                  >
-                    <div class="static ml-[5px]">
-                      <img
-                        class="h-[17.5px] w-[17.5px] inline-block"
-                        src={DOSlogo}
-                        alt="Hi"
-                      ></img>
-                      <div class="inline-block ml-[5px] text-[18px]/[20px] ">
-                        {" "}
-                        <strong>MS-DOS</strong>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <></>
-                )}
-                {o3 !== 0 ? (
-                  <div
-                    class={
-                      " my-[5px] mx-[5px] border-t-2 border-s-2 min-w-[100px] border-e-[3px] border-b-[3px]" +
-                      (functions[3.5]
-                        ? "border-t-black  border-s-black border-e-white  border-black bg-slate-50"
-                        : "  border-e-black border-b-black")
-                    }
-                    onClick={() => maximize(3)}
-                  >
-                    <div class="static ml-[5px]">
-                      <img
-                        class="h-[20px] w-[20px] inline-block"
-                        src={ReactLogo}
-                        alt="Hi"
-                      ></img>
-                      <div class="inline-block ml-[5px] text-[18px]/[20px] ">
-                        {" "}
-                        <strong>Resume</strong>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <></>
-                )}
+                {dataArray.map((item) => (
+                  // Conditionally render based on the value of the 'on' prop
+                  <Task
+                    key={item.id}
+                    functions={functions}
+                    Logo={item.logo}
+                    no={item.id}
+                    maximize={maximize}
+                    name={item.name}
+                  />
+                ))}
               </div>
               <div className=" px-2 bg-white Time fixed right-2 border-t-2 border-s-2 my-[5px] mx-1  content-center border-e-[3px] border-b-[3px]">
                 <Clock

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactLogo from ".././logo.svg";
+import FolderLogo from ".././folder.png";
 import IELogo from "../ielogo.png";
 import DOSlogo from "../msdoslogo.png";
 export class Bg extends Component {
@@ -31,17 +32,17 @@ export class Bg extends Component {
             <img class="object-contain pl-1" src={DOSlogo} alt="Hi"></img>
             <p>MS-DOS</p>
           </div>
-          
+
           <div
             onDoubleClick={(event) => this.toogleClick(3, "3")}
-            class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 "
+            class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 grid grid-flow-row justify-center"
           >
-            <img class="object-contain" src={ReactLogo} alt="Hi"></img>
+            <img class="object-contain" src={FolderLogo} alt="Hi"></img>
             <p>Resume</p>
           </div>
 
-          <div class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5  ">
-            <img class="object-contain" src={ReactLogo} alt="Hi"></img>
+          <div class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 grid grid-flow-row justify-center ">
+            <img class="object-contain" src={FolderLogo} alt="Hi"></img>
             <p>Home</p>
           </div>
         </div>

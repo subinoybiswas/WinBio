@@ -76,7 +76,7 @@ export class Window2 extends Component {
         );
       }
     },
-  
+
     time: () => {
       return "The time is: " + this.getCurrentTime();
     },
@@ -234,7 +234,7 @@ export class Window2 extends Component {
           <div class=" grid grid-flow-col justify-end mr-0.5 self-center h-[20px]">
             <div
               onClick={this.handleButtonClick}
-              class="px-2  ml-0.5  bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
+              class="px-2  ml-0.5  bg-center bg-[#ccc] bg-no-repeat bg-[url('minimizeicon.png')]"
               style={{
                 borderLeftColor: "#fff",
                 borderTopColor: "#fff",
@@ -244,7 +244,7 @@ export class Window2 extends Component {
 
             <div
               onClick={this.toggleFullScreen}
-              class="px-2 ml-0.5   bg-center bg-[#ccc] bg-no-repeat bg-[url('close-icon.png')]"
+              class="px-2 ml-0.5   bg-center bg-[#ccc] bg-no-repeat bg-[url('maximizeicon.png')]"
               style={{
                 borderLeftColor: "#fff",
                 borderTopColor: "#fff",
