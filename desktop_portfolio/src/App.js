@@ -98,7 +98,7 @@ function App() {
     // console.log(x);
     functions[x + 0.3](0);
     functions[x + 0.6](false);
-    deleteFromDataArray(x);
+
     // await console.log(z);
   };
 
@@ -109,6 +109,7 @@ function App() {
     functions[x + 0.1](false);
     windowClose(x);
     functions[x + 0.4](0);
+    deleteFromDataArray(x);
     console.log(z, z2, z3);
   };
 
