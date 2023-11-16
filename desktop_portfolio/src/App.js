@@ -9,7 +9,7 @@ import FolderLogo from "./folder.png";
 import IELogo from "./ie.ico";
 import DOSlogo from "./msdoslogo.png";
 import win from "./winlogo.png";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import bgimg from "./winbg.png";
 import { BrowserView, MobileView } from "react-device-detect"; //  isBrowser,isMobile also available
 import Clock from "react-live-clock";
@@ -29,7 +29,32 @@ function App() {
   const [o3, seto3] = useState(0);
 
   //console.log(clicked);
+  const [dataArray, setDataArray] = useState([]);
 
+  const taskArray = [
+    { id: 1, logo: IELogo, name: "Internet" },
+    { id: 2, logo: DOSlogo, name: "MS-DOS" },
+    { id: 3, logo: FolderLogo, name: "Resume" },
+  ];
+
+  const addToDataArray = (id) => {
+    const task = taskArray.find((item) => item.id === id);
+
+    if (task) {
+      setDataArray((prevDataArray) => [...prevDataArray, task]);
+    }
+    console.log(dataArray);
+  };
+
+  const deleteFromDataArray = (id) => {
+    setDataArray((prevDataArray) =>
+      prevDataArray.filter((item) => item.id !== id)
+    );
+  };
+  useEffect(() => {
+    // This block will execute each time dataArray gets updated
+    console.log("dataArray updated:", dataArray);
+  }, [dataArray]);
   var functions = {
     1: clicked,
     1.1: setClicked,
@@ -54,7 +79,7 @@ function App() {
     3.6: setc3,
   };
 
-  const windowSet = async (x) => {
+  const windowSet = (x) => {
     // console.log(typeof x);
     for (let i = 1; i <= 3; i++) {
       if (i === x) {
@@ -69,15 +94,16 @@ function App() {
     }
   };
 
-  const windowClose = async (x) => {
+  const windowClose = (x) => {
     // console.log(x);
     functions[x + 0.3](0);
     functions[x + 0.6](false);
+    deleteFromDataArray(x);
     // await console.log(z);
   };
 
   //console.log("Type of functions: ", typeof functions);
-  const handleToggleClick = async (x) => {
+  const handleToggleClick = (x) => {
     //console.log("hi");
     //console.log(Window2);
     functions[x + 0.1](false);
@@ -101,6 +127,8 @@ function App() {
   const openwin1 = (x) => {
     functions[x + 0.1](true);
     functions[x + 0.4](1);
+
+    addToDataArray(x);
   };
   const [isActive, setIsActive] = useState(false);
   const handleClick = () => {
@@ -115,12 +143,6 @@ function App() {
       setIsActive(false);
     }
   };
-  const dataArray = [
-    { id: 1, logo: IELogo, on: o, name: "Internet" },
-    { id: 2, logo: DOSlogo, on: o2, name: "MS-DOS" },
-    { id: 3, logo: FolderLogo, on: o3, name: "Resume" },
-    // Add more data items as needed
-  ];
 
   return (
     <div>
@@ -240,51 +262,17 @@ function App() {
                 </div>
               </div>
               <div className="  grid grid-flow-col  h-[28px] items-center">
-                {dataArray.map((item) =>
-                  // Conditionally render based on the value of the 'o' prop
-                  item.on !== 0 ? (
-                    <Task
-                      functions={functions}
-                      Logo={item.logo}
-                      no={item.id}
-                      maximize={maximize}
-                      name={item.name}
-                    />
-                  ) : null
-                )}
-                {/* {o !== 0 ? (
+                {dataArray.map((item) => (
+                  // Conditionally render based on the value of the 'on' prop
                   <Task
+                    key={item.id}
                     functions={functions}
-                    Logo={IELogo}
-                    no={1}
+                    Logo={item.logo}
+                    no={item.id}
                     maximize={maximize}
-                    name={"Internet"}
+                    name={item.name}
                   />
-                ) : (
-                  <></>
-                )}
-                {o2 !== 0 ? (
-                  <Task
-                    functions={functions}
-                    Logo={DOSlogo}
-                    no={2}
-                    maximize={maximize}
-                    name={"MS-DOS"}
-                  />
-                ) : (
-                  <></>
-                )}
-                {o3 !== 0 ? (
-                  <Task
-                    functions={functions}
-                    Logo={FolderLogo}
-                    no={3}
-                    maximize={maximize}
-                    name={"Resume"}
-                  />
-                ) : (
-                  <></>
-                )} */}
+                ))}
               </div>
               <div className=" px-2 bg-white Time fixed right-2 border-t-2 border-s-2 my-[5px] mx-1  content-center border-e-[3px] border-b-[3px]">
                 <Clock
