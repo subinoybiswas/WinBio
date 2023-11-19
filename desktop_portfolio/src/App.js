@@ -41,8 +41,14 @@ function App() {
     const task = taskArray.find((item) => item.id === id);
 
     if (task) {
-      setDataArray((prevDataArray) => [...prevDataArray, task]);
+      // Check if the task is not already in the dataArray
+      if (!dataArray.some((item) => item.id === task.id)) {
+        setDataArray((prevDataArray) => [...prevDataArray, task]);
+      } else {
+        console.log(`Task with id ${id} is already in dataArray.`);
+      }
     }
+
     console.log(dataArray);
   };
 
@@ -128,7 +134,6 @@ function App() {
   const openwin1 = (x) => {
     functions[x + 0.1](true);
     functions[x + 0.4](1);
-
     addToDataArray(x);
   };
   const [isActive, setIsActive] = useState(false);
@@ -259,7 +264,9 @@ function App() {
                     alt="Win"
                     class="ml-1 mt-0.5 h-[20px] w-[20px] "
                   ></img>
-                  <div class="text-black">Start</div>
+                  <div class="text-black ">
+                    <strong>Start</strong>
+                  </div>
                 </div>
               </div>
               <div className="  grid grid-flow-col  h-[28px] items-center">

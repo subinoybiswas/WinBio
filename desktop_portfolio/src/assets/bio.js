@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "./MyPic.jpg";
 function Bio() {
   return (
     <div
@@ -9,6 +9,9 @@ function Bio() {
       <h1 className="text-center text-4xl font-bold mb-4 pt-4 font-sans">
         Hey 👋, Subinoy this side!
       </h1>
+      <div class="flex justify-center">
+        <img src={Image} alt="UserImage" class="h-[600px] w-[800px] object-cover object-top m-2"></img>
+      </div>
       <div className="">
         <p className="text-center mb-4">
           I'm a second-year Computer Science student driven by a fervent passion
