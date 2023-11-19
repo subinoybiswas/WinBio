@@ -259,7 +259,9 @@ function App() {
                     alt="Win"
                     class="ml-1 mt-0.5 h-[20px] w-[20px] "
                   ></img>
-                  <div class="text-black">Start</div>
+                  <div class="text-black ">
+                    <strong>Start</strong>
+                  </div>
                 </div>
               </div>
               <div className="  grid grid-flow-col  h-[28px] items-center">

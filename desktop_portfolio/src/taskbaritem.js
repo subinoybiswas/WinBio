@@ -10,7 +10,7 @@ const Task = ({ functions, Logo, no, maximize, name }) => {
       className={
         "my-[5px] mx-[5px] border-t-2 border-s-2 min-w-[100px] border-e-[3px] border-b-[3px]" +
         (functions[no + 0.5]
-          ? " border-t-black border-s-black border-e-white bg-slate-50"
+          ? " border-t-black border-s-black border-e-white "
           : " border-e-black border-b-black")
       }
       onClick={() => maximize(no)}
