@@ -58,7 +58,7 @@ function Bio() {
       <br></br>
       <div>
         <p className="text-2xl mb-2 font-bold ">Web Developer</p>
-        <p className="mb-2"> 
+        <p className="mb-2">
           I have created multiple fullstack projects as an Web Developer.
           Although I shine as Backend Developer. I have honed my skills in
           frontend with my expercince with Reactjs. I have plenty of experince
@@ -69,80 +69,59 @@ function Bio() {
           I like to build proucts which my friends and families find useful.
           Here are some of my projects.
         </p>
-      </div>
-      <div class="list-none ">
-        <div>
-          <p
-            className="mb-4  font-sans"
-            style={{ fontFamily: "MS Sans Serif" }}
+        <div class="underline text-[#0000EE]">
+          <a
+            href="https://github.com/MenOfCultureSS0/YourMedic"
+            target="_blank"
+            rel="noreferrer"
           >
-            <li>🔭 Currently pursuing BTech CSE</li>
-            <li>🌱 Nodejs Developer </li>
-            <li>
-              🔨 Building{" "}
-              <a
-                href="https://linktr.ee/devdotcom"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                DevDotCom
-              </a>
-            </li>
-            <li>
-              🔍 Freelance Technical Writer <br />
-            </li>
-            <li>
-              ⏰ Winner of &nbsp;
-              <a
-                href="https://devfolio.co/statuscode0/dashboard"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                StatusCode0(MLH Hackathon)
-              </a>
-            </li>
-          </p>
-        </div>
-
-        <div>
-          <h1 className="text-4xl font-bold mb-2  py-4">🌐 Socials 🌐</h1>
-          <p className="text-sm mb-4 content-center  ">
-            <a
-              href="https://linkedin.com/in/heysubinoy"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <img
-                src="https://img.icons8.com/color/48/linkedin.png"
-                alt="LinkedIn"
-                className="inline-block mr-4 h-[30px]"
-              />
-            </a>{" "}
-            <a
-              href="https://twitter.com/heysubinoy"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <img
-                src="https://img.icons8.com/color/48/twitter--v1.png"
-                alt="Twitter"
-                className="inline-block mr-4 h-[30px]"
-              />
-            </a>{" "}
-            <a
-              href="https://instagram.com/biswas.subinoy"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <img
-                src="https://img.icons8.com/fluency/48/instagram-new.png"
-                alt="Instagram"
-                className="inline-block h-[30px]"
-              />
-            </a>
-          </p>
+            [AarogyaDisha]
+          </a>
+          ,
+          <a
+            href="https://github.com/subinoybiswas/RishiGPT"
+            target="_blank"
+            rel="noreferrer"
+          >
+            [RishiGPT]
+          </a>
+          ,
+          <a
+            href="https://github.com/subinoybiswas/friend.ly"
+            target="_blank"
+            rel="noreferrer"
+          >
+            [Friendly]
+          </a>
         </div>
       </div>
+      <br></br>
+      <div>
+        <p className="text-2xl mb-2 font-bold ">Technical Writer</p>
+        <p className="mb-2">
+          In my three-month internship at MyInscribe Inc., I served as an intern
+          Content Writer, focusing on blogs and articles. Transitioning into
+          freelance technical writing, I continued producing engaging content
+          that simplified intricate technical subjects. This experience
+          showcases my ability to communicate complex ideas in a reader-friendly
+          manner within the dynamic tech landscape.
+        </p>
+      </div>
+      <br></br>
+      <div>
+        <p className="text-2xl mb-2 font-bold ">Resume</p>
+        <div class="underline text-[#0000EE]">
+          <a
+            href="https://linkedin.com/in/heysubinoy"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            [Click here to checkout my resume]
+          </a>
+        </div>
+      </div>
+      <br></br>
+      <br></br>
     </div>
   );
 }
