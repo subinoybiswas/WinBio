@@ -1,10 +1,36 @@
 import React from "react";
-
+import Send from "./mail.png";
 function Mail() {
   return (
-    <div>
-      Hello
-      <div>Hi</div>
+    <div className=" flex flex-col bg-white h-[100%]">
+      <div className="bg-[#007654]">
+        <div className="text-4xl border-b-2">Send a Message</div>
+        <div className="flex pl-2 border-b-2">
+          <div>From:</div>
+          <input className="ml-1 bg-[#007654] outline-none w-[100%]"></input>
+        </div>
+        <div className="pl-2 border-b-2 border-grey flex items-center">
+          <div>To: </div>
+          <div className="pl-1 content-center">
+            <div className="border-2 rounded text-xs "> Subinoy</div>
+          </div>
+        </div>
+
+        <div className="flex pl-2 border-b-2">
+          <div>Subject:</div>
+          <input className="ml-1 bg-[#007654] outline-none w-[100%]"></input>
+        </div>
+      </div>
+      <div className="flex-grow">
+        <textarea className="w-[100%] h-[100%] outline-none p-2 border-black border-2 bg-slate-50"></textarea>
+      </div>
+      <div className="flex flex-row justify-end items-center">
+        <div className="mx-2 outline px-2 active:outline-slate-300">Reset</div>
+        <div className="flex flex-row px-2 items-center  m-1 outline active:outline-slate-300">
+          <img src={Send} alt="Send" className="h-[20px] pr-1"></img>
+          <div>Send</div>
+        </div>
+      </div>
     </div>
   );
 }
