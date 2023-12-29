@@ -2,23 +2,25 @@ import React from "react";
 import Send from "./mail.png";
 function Mail() {
   return (
-    <div className=" flex flex-col bg-white h-[100%]">
-      <div className="bg-[#007654]">
-        <div className="text-4xl border-b-2">Send a Message</div>
+    <div className=" flex flex-col bg-white h-[100%] items text-lg">
+      <div className="bg-slate-50">
+        <div className="text-4xl border-b-2 mx-2 ">
+          Send a Message
+        </div>
         <div className="flex pl-2 border-b-2">
           <div>From:</div>
-          <input className="ml-1 bg-[#007654] outline-none w-[100%]"></input>
+          <input className="ml-1 bg-slate-50 outline-none w-[100%]"></input>
         </div>
         <div className="pl-2 border-b-2 border-grey flex items-center">
           <div>To: </div>
           <div className="pl-1 content-center">
-            <div className="border-2 rounded text-xs "> Subinoy</div>
+            <div className="border-2 rounded text-sm bg-sky-200 "> Subinoy</div>
           </div>
         </div>
 
         <div className="flex pl-2 border-b-2">
           <div>Subject:</div>
-          <input className="ml-1 bg-[#007654] outline-none w-[100%]"></input>
+          <input className="ml-1 bg-slate-50 outline-none w-[100%]"></input>
         </div>
       </div>
       <div className="flex-grow">
