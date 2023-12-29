@@ -3,6 +3,7 @@ import { Bg } from "./assets/bg";
 import { Window1 } from "./assets/window1";
 import { Window2 } from "./assets/Window2";
 import { Window3 } from "./assets/window3";
+import { Window4 } from "./assets/Window4";
 import ReactLogo from "./logo.svg";
 import Task from "./taskbaritem";
 import FolderLogo from "./folder.png";
@@ -19,15 +20,19 @@ function App() {
   const [clicked, setClicked] = useState(false);
   const [clicked2, setClicked2] = useState(false);
   const [clicked3, setClicked3] = useState(false);
+  const [clicked4, setClicked4] = useState(false);
   const [c, setc] = useState(false);
   const [c2, setc2] = useState(false);
   const [c3, setc3] = useState(false);
+  const [c4, setc4] = useState(false);
   const [z, setz] = useState(1);
   const [z2, setz2] = useState(2);
   const [z3, setz3] = useState(3);
+  const [z4, setz4] = useState(4);
   const [o, seto] = useState(0);
   const [o2, seto2] = useState(0);
   const [o3, seto3] = useState(0);
+  const [o4, seto4] = useState(0);
 
   //console.log(clicked);
   const [dataArray, setDataArray] = useState([]);
@@ -36,6 +41,8 @@ function App() {
     { id: 1, logo: IELogo, name: "Internet" },
     { id: 2, logo: DOSlogo, name: "MS-DOS" },
     { id: 3, logo: FolderLogo, name: "Resume" },
+    { id: 4, logo: ReactLogo, name: "Mail" },
+
   ];
 
   const addToDataArray = (id) => {
@@ -84,11 +91,18 @@ function App() {
     3.4: seto3,
     3.5: c3,
     3.6: setc3,
+    4: clicked4,
+    4.1: setClicked4,
+    4.2: z4,
+    4.3: setz4,
+    4.4: seto4,
+    4.5: c4,
+    4.6: setc4,
   };
 
   const windowSet = (x) => {
     // console.log(typeof x);
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 4; i++) {
       if (i === x) {
         functions[i + 0.3](10);
 
@@ -192,6 +206,17 @@ function App() {
           )}
           {functions[1] ? (
             <Window1
+              {...functions}
+              handleToggleClick={handleToggleClick}
+              windowset={windowSet}
+              windowclose={windowClose}
+              Minimize={minimize}
+            />
+          ) : (
+            ""
+          )}
+          {functions[4] ? (
+            <Window4
               {...functions}
               handleToggleClick={handleToggleClick}
               windowset={windowSet}
