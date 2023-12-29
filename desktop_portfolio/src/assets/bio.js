@@ -6,118 +6,139 @@ function Bio() {
       class="h-[100%] overflow-auto px-[15%]  font-normal font-sans"
       style={{ fontFamily: "MS Sans Serif" }}
     >
-      <h1 className="text-center text-4xl font-bold mb-4 pt-4 font-sans">
-        Hey 👋, Subinoy this side!
-      </h1>
       <div class="flex justify-center">
-        <img src={Image} alt="UserImage" class="h-[600px] w-[800px] object-cover object-top m-2"></img>
+        <img
+          src={Image}
+          alt="UserImage"
+          class="h-[600px] w-[800px] object-cover object-top m-2"
+        ></img>
       </div>
       <div className="">
-        <p className="text-center mb-4">
-          I'm a second-year Computer Science student driven by a fervent passion
-          for technology. My sights are set on becoming a proficient Node.js
-          Developer, leveraging my solid Web Development foundation. With two
-          completed projects under my belt, I'm dedicated to practical growth.
-          Enthralled by Cloud and Web Development, I'm on an unending quest to
-          carve my niche in tech's dynamic realm.
+        <h1 className=" text-4xl font-bold mb-4 pt-4 font-sans">
+          Subinoy Biswas
+        </h1>
+        <p className="text-[12px]">
+          Web Developer | Community Builder | Machine Learning Enthusiast | IOT
+          Enthusiast
         </p>
-        <p className="text-center mb-4">
-          My proactive spirit extends beyond coding—I've revitalized my college
-          coding club and founded{" "}
+        <p className="text-[14px]">Kolkata, India</p>
+        <br></br>
+        <p className="text-2xl mb-2 font-bold">About Me</p>
+        <p className=" mb-4">
+          As a second-year Computer Science student, I am fueled by a fervent
+          passion for technology. My goal is to become a proficient Node.js
+          Developer, building upon my strong foundation in web development. With
+          two completed projects showcasing my dedication to practical growth, I
+          am particularly enthralled by Cloud and Web Development. I am on an
+          unending quest to carve my niche in the dynamic realm of technology.
+        </p>
+      </div>
+      <div>
+        <p className="text-2xl mb-2 font-bold">StatusCode 0</p>
+        <p>
+          My second attempt at an MLH Hackathon proved successful. After a
+          novice and unprepared approach at Diversion 2k22, I made a determined
+          effort at StatusCode 0, a hackathon organized by renowned institutes
+          such as IIIT Kalyani and IISER Kolkata. Our team presented an
+          innovative project called MedHelpAI, a 3D Humanoid Health Assistant
+          with the power of Natural Language Processing, showcasing our
+          commitment to technological innovation and problem-solving.{" "}
+        </p>
+      </div>
+      <br></br>
+      <div>
+        <p className="text-2xl mb-2 font-bold">JISTech2K23</p>
+        <p>
+          JISTech2K23 is an annual tech fest organized by my college, JIS
+          College of Engineering. I actively participated in the event,
+          showcasing numerous projects, including AarogyaDisha and BlindSightAI,
+          and remarkably won three awards. I am extremely grateful for this
+          experience as it significantly enhanced my teamwork and presentation
+          skills.
+        </p>
+      </div>
+      <br></br>
+      <div>
+        <p className="text-2xl mb-2 font-bold ">Web Developer</p>
+        <p className="mb-2">
+          I have developed multiple full-stack projects as a web developer,
+          excelling particularly in backend development. While my expertise
+          shines in backend technologies such as Node.js, Express.js, and
+          Python, I have honed my frontend skills with experience in React.js.
+          Additionally, I possess substantial experience working with both SQL
+          and NoSQL databases, showcasing a comprehensive understanding of
+          database solutions.
+        </p>
+        <p>
+          I like to build proucts which my friends and families find useful.
+          Here are some of my projects.
+        </p>
+        <div class="underline text-[#0000EE]">
           <a
-            href="https://linktr.ee/devdotcom"
+            href="https://github.com/MenOfCultureSS0/YourMedic"
+            target="_blank"
+            rel="noreferrer"
+          >
+            [AarogyaDisha]
+          </a>
+          ,
+          <a
+            href="https://github.com/subinoybiswas/RishiGPT"
+            target="_blank"
+            rel="noreferrer"
+          >
+            [RishiGPT]
+          </a>
+          ,
+          <a
+            href="https://github.com/subinoybiswas/friend.ly"
+            target="_blank"
+            rel="noreferrer"
+          >
+            [Friendly]
+          </a>
+        </div>
+      </div>
+      <br></br>
+      <div>
+        <p className="text-2xl mb-2 font-bold ">Technical Writer</p>
+        <p className="mb-2">
+          In my three-month internship at MyInscribe Inc., I served as an intern
+          Content Writer, focusing on blogs and articles. Transitioning into
+          freelance technical writing, I continued to produce engaging content
+          that simplified intricate technical subjects. This experience
+          showcases my ability to communicate complex ideas in a reader-friendly
+          manner within the dynamic tech landscape.
+        </p>
+      </div>
+      <br></br>
+      <div>
+        <p className="text-2xl mb-2 font-bold ">Community Builder</p>
+        <p className="mb-2">
+          I successfully established DevDotCom, a thriving community with 1000+
+          members, and played a pivotal role in revitalizing the JISCE Coding
+          Club at our college. Through collaborative efforts, my team and I
+          organized Coding Events and Workshops, culminating in the execution of
+          Eastern India's Largest In-person Open Source Event. These experiences
+          reflect my commitment to fostering a vibrant coding culture and
+          community engagement.
+        </p>
+      </div>
+      <br></br>
+      <div>
+        <p className="text-2xl mb-2 font-bold ">Resume</p>
+        <div class="underline text-[#0000EE]">
+          <a
+            href="https://drive.google.com/file/d/1p3MEOQUIvwDG5H6QbCb-UTtoWyQ9CnEh/view?usp=sharing"
             target="_blank"
             rel="noreferrer noopener"
           >
-            DevDotCom
+            [Click here to checkout my resume]
           </a>
-          , a thriving 500-member strong developer community. I foster growth,
-          organize events, and competitions.
-        </p>
-        <p className="text-center mb-4">
-          I also thrive as a Technical Writer. As a Freelance Technical Writer,
-          I transform complex concepts into digestible content, bridging
-          development and communication.
-        </p>
-      </div>
-      <div class="list-none ">
-        <h1 className="text-4xl font-bold mb-2 text-center py-4 ">
-          💫 About Me 💫
-        </h1>
-        <div>
-          <p
-            className="mb-4 text-center font-sans"
-            style={{ fontFamily: "MS Sans Serif" }}
-          >
-            <li>🔭 Currently pursuing BTech CSE</li>
-            <li>🌱 Nodejs Developer </li>
-            <li>
-              🔨 Building{" "}
-              <a
-                href="https://linktr.ee/devdotcom"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                DevDotCom
-              </a>
-            </li>
-            <li>
-              🔍 Freelance Technical Writer <br />
-            </li>
-            <li>
-              ⏰ Winner of &nbsp;
-              <a
-                href="https://devfolio.co/statuscode0/dashboard"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                StatusCode0(MLH Hackathon)
-              </a>
-            </li>
-          </p>
-        </div>
-
-        <div>
-          <h1 className="text-4xl font-bold mb-2 text-center py-4">
-            🌐 Socials 🌐
-          </h1>
-          <p className="text-sm mb-4 content-center text-center ">
-            <a
-              href="https://linkedin.com/in/heysubinoy"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <img
-                src="https://img.icons8.com/color/48/linkedin.png"
-                alt="LinkedIn"
-                className="inline-block mr-4 h-[30px]"
-              />
-            </a>{" "}
-            <a
-              href="https://twitter.com/heysubinoy"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <img
-                src="https://img.icons8.com/color/48/twitter--v1.png"
-                alt="Twitter"
-                className="inline-block mr-4 h-[30px]"
-              />
-            </a>{" "}
-            <a
-              href="https://instagram.com/biswas.subinoy"
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <img
-                src="https://img.icons8.com/fluency/48/instagram-new.png"
-                alt="Instagram"
-                className="inline-block h-[30px]"
-              />
-            </a>
-          </p>
         </div>
       </div>
+      <br></br>
+      <br></br>
     </div>
   );
 }

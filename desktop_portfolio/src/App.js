@@ -13,6 +13,7 @@ import React, { useState, useEffect } from "react";
 import bgimg from "./winbg.png";
 import { BrowserView, MobileView } from "react-device-detect"; //  isBrowser,isMobile also available
 import Clock from "react-live-clock";
+import StartMenu from "./assets/startMenu";
 
 function App() {
   const [clicked, setClicked] = useState(false);
@@ -201,52 +202,7 @@ function App() {
             ""
           )}
 
-          {isActive ? (
-            <div class=" absolute h-[30rem] w-[20rem] bg-white left-0 bottom-10 z-[100]">
-              <div class="grid grid-flow-col ">
-                <div class=" bg-emerald-300">
-                  {/* <div class="  fixed text-black bg-zinc-50 w-[200px] h-[35px] ml-1 -left-[90px] bottom-[19%] -rotate-90">
-                  Windows Me
-                </div> */}
-                </div>
-                <div class="bg-black col-span-5 grid grid-flow-row auto-rows-max">
-                  {/* <div class="bg-blue-400 row-[span_16_/_span_16]">Hi</div> */}
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
-                    Hi
-                  </div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
-                    Hi
-                  </div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
-                    Hi
-                  </div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
-                    Hi
-                  </div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
-                    Hi
-                  </div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
-                    Hi
-                  </div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
-                    Hi
-                  </div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
-                    Hi
-                  </div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
-                    Hi
-                  </div>
-                  <div class="bg-blue-400 h-12 border-2 text-center py-1 border-slate-50">
-                    Hi
-                  </div>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <></>
-          )}
+          {isActive ? <StartMenu /> : <></>}
           <div class="cursor-pointer bg-[#C0C0C0] fixed border-t-2 border-white bottom-0 left-0 right-0 h-10 text-[17px] z-[100] text-black">
             <div class="grid grid-flow-col justify-start ">
               <div class="mx-1 h-[28px] w-[90px] ">
