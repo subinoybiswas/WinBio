@@ -10,6 +10,7 @@ import FolderLogo from "./folder.png";
 import IELogo from "./ie.ico";
 import DOSlogo from "./msdoslogo.png";
 import win from "./winlogo.png";
+import Mail from "./assets/mail2.png";
 import React, { useState, useEffect } from "react";
 import bgimg from "./winbg.png";
 import { BrowserView, MobileView } from "react-device-detect"; //  isBrowser,isMobile also available
@@ -41,8 +42,7 @@ function App() {
     { id: 1, logo: IELogo, name: "Internet" },
     { id: 2, logo: DOSlogo, name: "MS-DOS" },
     { id: 3, logo: FolderLogo, name: "Resume" },
-    { id: 4, logo: ReactLogo, name: "Mail" },
-
+    { id: 4, logo: Mail, name: "Mail" },
   ];
 
   const addToDataArray = (id) => {

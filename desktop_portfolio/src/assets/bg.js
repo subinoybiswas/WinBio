@@ -3,6 +3,7 @@ import ReactLogo from ".././logo.svg";
 import FolderLogo from ".././folder.png";
 import IELogo from "../ielogo.png";
 import DOSlogo from "../msdoslogo.png";
+import Mail from "./mail2.png";
 export class Bg extends Component {
   toogleClick = (x, y) => {
     //console.log(this.props);
@@ -45,8 +46,8 @@ export class Bg extends Component {
             onDoubleClick={(event) => this.toogleClick(4, "4")}
             class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 grid grid-flow-row justify-center "
           >
-            <img class="object-contain" src={FolderLogo} alt="Hi"></img>
-            <p>Home</p>
+            <img class="object-contain" src={Mail} alt="Mail" className="h-[50px]"></img>
+            <p>Mail</p>
           </div>
         </div>
 
