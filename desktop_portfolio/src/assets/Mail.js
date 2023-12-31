@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Send from "./mail.png";
 import emailjs from "@emailjs/browser";
 function Mail() {
+  const refo = useRef();
   const [formData, setFormData] = useState({
     from_name: "",
     subject: "",
     message: "",
+    reply_to: "",
   });
 
   const sendEmail = (e) => {
@@ -14,7 +16,8 @@ function Mail() {
     if (
       formData.from_name === "" ||
       formData.message === "" ||
-      formData.subject === ""
+      formData.subject === "" ||
+      formData.reply_to === ""
     ) {
       console.log("Error");
       return;
@@ -40,7 +43,7 @@ function Mail() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
   const reset = () => {
-    setFormData({ from_name: "", subject: "", message: "" });
+    setFormData({ from_name: "", subject: "", message: "", reply_to: "" });
   };
 
   return (
@@ -77,6 +80,17 @@ function Mail() {
             required="true"
           ></input>
         </div>
+        <div className="flex flex-row pl-2 border-b-2">
+          <div className="flex flex-row">Reply To:</div>
+          <input
+            className="ml-1 bg-[#f1f5f9] outline-none w-[85%]"
+            type="text"
+            name="reply_to"
+            value={formData.reply_to}
+            onChange={handleChange}
+            required="true"
+          ></input>
+        </div>
       </div>
       <div className="flex-grow">
         <textarea
@@ -100,7 +114,7 @@ function Mail() {
           onClick={sendEmail}
         >
           <img src={Send} alt="Send" className="h-[20px] pr-1"></img>
-          <div>Send</div>
+          <div id="sendsent">Send</div>
         </button>
       </div>
     </div>
