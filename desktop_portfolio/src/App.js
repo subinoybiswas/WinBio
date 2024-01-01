@@ -6,7 +6,7 @@ import { Window3 } from "./assets/window3";
 import { Window4 } from "./assets/Window4";
 import ReactLogo from "./logo.svg";
 import Task from "./taskbaritem";
-import FolderLogo from "./folder.png";
+import FolderLogo from "./assets/me.png";
 import IELogo from "./ie.ico";
 import DOSlogo from "./msdoslogo.png";
 import win from "./winlogo.png";
@@ -41,7 +41,7 @@ function App() {
   const taskArray = [
     { id: 1, logo: IELogo, name: "Internet" },
     { id: 2, logo: DOSlogo, name: "MS-DOS" },
-    { id: 3, logo: FolderLogo, name: "Resume" },
+    { id: 3, logo: FolderLogo, name: "Me" },
     { id: 4, logo: Mail, name: "Mail" },
   ];
 

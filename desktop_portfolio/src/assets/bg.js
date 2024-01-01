@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactLogo from ".././logo.svg";
-import FolderLogo from ".././folder.png";
+import Me from "./me.png";
 import IELogo from "../ielogo.png";
 import DOSlogo from "../msdoslogo.png";
 import Mail from "./mail2.png";
@@ -18,14 +18,12 @@ export class Bg extends Component {
       <div class=" cursor-pointer fixed left-0 text-white text-sm min-h-full w-[200px]">
         <div class=" text-center absolute left-0 mx-2.5 grid grid-flow-row  ">
           <div
-            class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 grid grid-flow-row justify-center "
-            onDoubleClick={(event) => this.toogleClick(1, "1")}
-            // onClick={(event) => this.toogleClick(1, "1")}
+            onDoubleClick={(event) => this.toogleClick(3, "3")}
+            class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 grid grid-flow-row justify-center"
           >
-            <img class="object-contain" src={IELogo} alt="Hi"></img>
-            <p>Internet</p>
+            <img class="object-contain w-[48px]" src={Me} alt="Me"></img>
+            <p>Me</p>
           </div>
-
           <div
             onDoubleClick={(event) => this.toogleClick(2, "2")}
             class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 grid grid-flow-row justify-center"
@@ -35,18 +33,24 @@ export class Bg extends Component {
           </div>
 
           <div
-            onDoubleClick={(event) => this.toogleClick(3, "3")}
-            class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 grid grid-flow-row justify-center"
+            class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 grid grid-flow-row justify-center "
+            onDoubleClick={(event) => this.toogleClick(1, "1")}
+            // onClick={(event) => this.toogleClick(1, "1")}
           >
-            <img class="object-contain" src={FolderLogo} alt="Hi"></img>
-            <p>Resume</p>
+            <img class="object-contain" src={IELogo} alt="Hi"></img>
+            <p>Internet</p>
           </div>
 
           <div
             onDoubleClick={(event) => this.toogleClick(4, "4")}
             class=" hover:bg-teal-200 h-[80px] w-[80px] my-2.5 grid grid-flow-row justify-center "
           >
-            <img class="object-contain" src={Mail} alt="Mail" className="h-[50px]"></img>
+            <img
+              class="object-contain"
+              src={Mail}
+              alt="Mail"
+              className="h-[50px]"
+            ></img>
             <p>Mail</p>
           </div>
         </div>

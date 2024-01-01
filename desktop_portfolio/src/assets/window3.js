@@ -82,7 +82,7 @@ export class Window3 extends Component {
         >
           <div class="grid grid-flow-col">
             <div class="text-white text-xl/[22px] pl-1 self-start  mr-0.5 ">
-              <strong>Resume</strong>
+              <strong>Me</strong>
             </div>
           </div>
 
