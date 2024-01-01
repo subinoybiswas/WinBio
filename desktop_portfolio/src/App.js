@@ -4,6 +4,7 @@ import { Window1 } from "./assets/window1";
 import { Window2 } from "./assets/Window2";
 import { Window3 } from "./assets/window3";
 import { Window4 } from "./assets/Window4";
+import { Window5 } from "./assets/Window5";
 import ReactLogo from "./logo.svg";
 import Task from "./taskbaritem";
 import FolderLogo from "./assets/me.png";
@@ -11,6 +12,7 @@ import IELogo from "./ie.ico";
 import DOSlogo from "./msdoslogo.png";
 import win from "./winlogo.png";
 import Mail from "./assets/mail2.png";
+import ResumeLogo from "./folder.png"
 import React, { useState, useEffect } from "react";
 import bgimg from "./winbg.png";
 import { BrowserView, MobileView } from "react-device-detect"; //  isBrowser,isMobile also available
@@ -22,18 +24,22 @@ function App() {
   const [clicked2, setClicked2] = useState(false);
   const [clicked3, setClicked3] = useState(false);
   const [clicked4, setClicked4] = useState(false);
+  const [clicked5, setClicked5] = useState(false);
   const [c, setc] = useState(false);
   const [c2, setc2] = useState(false);
   const [c3, setc3] = useState(false);
   const [c4, setc4] = useState(false);
+  const [c5, setc5] = useState(false);
   const [z, setz] = useState(1);
   const [z2, setz2] = useState(2);
   const [z3, setz3] = useState(3);
   const [z4, setz4] = useState(4);
+  const [z5, setz5] = useState(5);
   const [o, seto] = useState(0);
   const [o2, seto2] = useState(0);
   const [o3, seto3] = useState(0);
   const [o4, seto4] = useState(0);
+  const [o5, seto5] = useState(0);
 
   //console.log(clicked);
   const [dataArray, setDataArray] = useState([]);
@@ -43,6 +49,7 @@ function App() {
     { id: 2, logo: DOSlogo, name: "MS-DOS" },
     { id: 3, logo: FolderLogo, name: "Me" },
     { id: 4, logo: Mail, name: "Mail" },
+    { id: 5, logo: ResumeLogo, name: "Resume" },
   ];
 
   const addToDataArray = (id) => {
@@ -98,11 +105,18 @@ function App() {
     4.4: seto4,
     4.5: c4,
     4.6: setc4,
+    5: clicked5,
+    5.1: setClicked5,
+    5.2: z5,
+    5.3: setz5,
+    5.4: seto5,
+    5.5: c5,
+    5.6: setc5,
   };
 
   const windowSet = (x) => {
     // console.log(typeof x);
-    for (let i = 1; i <= 4; i++) {
+    for (let i = 1; i <= 5; i++) {
       if (i === x) {
         functions[i + 0.3](10);
 
@@ -217,6 +231,17 @@ function App() {
           )}
           {functions[4] ? (
             <Window4
+              {...functions}
+              handleToggleClick={handleToggleClick}
+              windowset={windowSet}
+              windowclose={windowClose}
+              Minimize={minimize}
+            />
+          ) : (
+            ""
+          )}
+          {functions[5] ? (
+            <Window5
               {...functions}
               handleToggleClick={handleToggleClick}
               windowset={windowSet}
